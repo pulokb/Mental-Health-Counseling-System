@@ -1,0 +1,8 @@
+@can('$MODEL_NAME$-view')
+<li class="">
+    <a href="{{route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index')}}" class="{{ Request::is(config('admin.admin_route_prefix').'/$MODEL_NAME_PLURAL_CAMEL$**') ? 'mm-active' : '' }}">
+        <i class="metismenu-icon pe-7s-menu"></i>
+        {{ __('$MODEL_NAME_PLURAL_HUMAN$') }}
+    </a>
+</li>
+@endcan

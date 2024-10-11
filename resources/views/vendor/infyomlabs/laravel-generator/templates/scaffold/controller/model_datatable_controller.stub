@@ -1,0 +1,75 @@
+<?php
+
+namespace $NAMESPACE_CONTROLLER$;
+
+use $NAMESPACE_DATATABLES$\$MODEL_NAME$DataTable;
+use $NAMESPACE_REQUEST$;
+use $NAMESPACE_REQUEST$\$MODEL_NAME$CreateRequest;
+use $NAMESPACE_REQUEST$\$MODEL_NAME$UpdateRequest;
+use $NAMESPACE_MODEL$\$MODEL_NAME$;
+use $NAMESPACE_APP$\Http\Controllers\AppBaseController;
+
+class $MODEL_NAME$Controller extends AppBaseController
+{
+
+    private $icon = 'pe-7s-menu';
+
+
+    public function index($MODEL_NAME$DataTable $$MODEL_NAME_CAMEL$DataTable)
+    {
+        $this->authorize('$MODEL_NAME$-view');
+        $icon = $this->icon;
+        return $$MODEL_NAME_CAMEL$DataTable->render('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.index',compact('icon'));
+    }
+
+
+    public function create()
+    {
+        $this->authorize('$MODEL_NAME$-create');
+        return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.create')->with('icon', $this->icon);
+    }
+
+
+    public function store($MODEL_NAME$CreateRequest $request)
+    {
+        $this->authorize('$MODEL_NAME$-create');
+        $MODEL_NAME$::create($request->all());
+        //$imageName = FileHelper::uploadImage($request);
+        //$MODEL_NAME$::create(array_merge($request->all(), ['image' => $imageName]));
+        notify()->success(__("Successfully Created"), __("Success"));
+        return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
+    }
+
+
+    public function show($MODEL_NAME$ $$MODEL_NAME_CAMEL$)
+    {
+        $this->authorize('$MODEL_NAME$-view');
+        return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.show',compact('$MODEL_NAME_CAMEL$'))->with('icon', $this->icon);
+    }
+
+
+    public function edit($MODEL_NAME$ $$MODEL_NAME_CAMEL$)
+    {
+        $this->authorize('$MODEL_NAME$-update');
+        return view('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.edit',compact('$MODEL_NAME_CAMEL$'))->with('icon', $this->icon);
+    }
+
+
+    public function update($MODEL_NAME$ $$MODEL_NAME_CAMEL$, $MODEL_NAME$UpdateRequest $request)
+    {
+        $this->authorize('$MODEL_NAME$-update');
+        // $imageName = FileHelper::uploadImage($request, $$MODEL_NAME_CAMEL$);
+        // $$MODEL_NAME_CAMEL$->fill(array_merge($request->all(), ['image' => $imageName]))->save();
+        $$MODEL_NAME_CAMEL$->fill($request->all())->save();
+        notify()->success(__("Successfully Updated"), __("Success"));
+        return redirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
+    }
+
+
+    public function destroy($MODEL_NAME$ $$MODEL_NAME_CAMEL$)
+    {
+        $this->authorize('$MODEL_NAME$-delete');
+        //FileHelper::deleteImage($$MODEL_NAME_CAMEL$);
+        $$MODEL_NAME_CAMEL$->delete();
+    }
+}

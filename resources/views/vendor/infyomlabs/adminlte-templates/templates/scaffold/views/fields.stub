@@ -1,0 +1,9 @@
+$FIELDS$
+
+<!-- Submit Field -->
+<div class="form-group">
+    {{ Form::button('<i class="fas fa-plus-circle"></i> '.__('Submit'), ['type' => 'submit', 'class' => 'btn btn-primary '] )  }}
+    <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index') }}" class="btn btn-danger"><i class="fa fa-window-close" aria-hidden="true"></i> {{ __("Cancel") }}</a>
+</div>
+
+{{-- @include('includes.ckeditor') --}}

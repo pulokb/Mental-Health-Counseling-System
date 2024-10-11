@@ -1,0 +1,48 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+use App\Helpers\AdminHelper;
+
+class Create$TABLE_NAME_TITLE$Table extends Migration
+{
+
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('$TABLE_NAME$', function (Blueprint $table) {
+            $FIELDS$
+        });
+
+        $adminPermissions = [
+
+            [
+                'group_name' => '$MODEL_NAME$',
+                'permissions' => [
+                    // $MODEL_NAME$ Permissions
+                    ['name'=>'$MODEL_NAME$-view','route'=>route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'),'search_status'=>1],
+                    ['name'=>'$MODEL_NAME$-create','route'=>route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create'),'search_status'=>1],
+                    ['name'=>'$MODEL_NAME$-update','route'=>NULL,'search_status'=>0],
+                    ['name'=>'$MODEL_NAME$-delete','route'=>NULL,'search_status'=>0],
+                ]
+            ],
+        ];
+
+        (new AdminHelper())->addPermission("admin",$adminPermissions);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('$TABLE_NAME$');
+    }
+}

@@ -1,0 +1,19 @@
+@extends('layouts.admin')
+@section('title'){{__('Create')}} {{ __('$MODEL_NAME_HUMAN$') }} @endsection
+@section('content')
+@include('includes.page_header',['title'=>__('Create')." ". __('$MODEL_NAME_HUMAN$'),'url'=>route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'),'icon' => $icon??'','permission'=>'$MODEL_NAME$-view'])
+<div class="row">
+    <div class="col-md-12">
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                    {!! Form::open(['route' => '$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.store'$FILES$]) !!}
+
+                        @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.fields')
+
+                    {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+

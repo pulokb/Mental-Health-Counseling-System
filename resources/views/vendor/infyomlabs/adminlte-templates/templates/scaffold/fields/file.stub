@@ -1,0 +1,10 @@
+<!-- $FIELD_NAME_TITLE$ Field -->
+@isset($$MODEL_NAME_CAMEL$)
+<img src="{{asset('images/'.$$MODEL_NAME_CAMEL$->image)}}" alt="" srcset="">
+@endisset
+<div class="form-group">
+    <br>
+    {!! Form::label('$FIELD_NAME$',  __('$FIELD_NAME_TITLE$')) !!}
+    {!! Form::file('$FIELD_NAME$') !!}
+</div>
+<div class="clearfix"></div>

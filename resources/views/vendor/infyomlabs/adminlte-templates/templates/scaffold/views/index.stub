@@ -1,0 +1,17 @@
+@extends('layouts.admin')
+@section('title'){{ __('$MODEL_NAME_PLURAL_HUMAN$') }} @endsection
+@section('content')
+@include('includes.page_header_index',['title'=>__('$MODEL_NAME_PLURAL_HUMAN$'),'url'=>route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create'),'icon' => $icon??'','permission'=>'$MODEL_NAME$-create'])
+<div class="row">
+    <div class="col-md-12">
+        <div class="main-card mb-3 card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    @include('$VIEW_PREFIX$$MODEL_NAME_PLURAL_SNAKE$.table')
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
+

@@ -1,0 +1,15 @@
+<div class='btn-group'>
+    @can('$MODEL_NAME$-view')
+    <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show', $$PRIMARY_KEY_NAME$) }}" class='btn btn-sm btn-primary'>
+        {{ __('View') }}
+    </a>
+    @endcan
+    @can('$MODEL_NAME$-update')
+    <a href="{{ route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.edit', $$PRIMARY_KEY_NAME$) }}" class='btn btn-sm btn-info'>
+       {{ __('Edit') }}
+    </a>
+    @endcan
+    @can('$MODEL_NAME$-delete')
+     <a href="javascript:void(0)" data-toggle="tooltip" data-id="{{$$PRIMARY_KEY_NAME$}}" data-original-title="Delete" class="btn btn-sm btn-danger delete">{{ __('Delete') }}</a>
+     @endcan
+</div>

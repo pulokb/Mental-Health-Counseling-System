@@ -1,0 +1,170 @@
+<?php
+
+namespace $NAMESPACE_API_TESTS$;
+
+use $NAMESPACE_MODEL$\$MODEL_NAME$;
+use Illuminate\Http\Response;
+use Plannr\Laravel\FastRefreshDatabase\Traits\FastRefreshDatabase;
+use Tests\TestCase;
+
+class $MODEL_NAME$Test extends TestCase
+{
+
+    use FastRefreshDatabase;
+
+    private function $MODEL_NAME_CAMEL$Create()
+    {
+        return $MODEL_NAME$::factory()->create();
+    }
+
+    private function $MODEL_NAME_CAMEL$Data()
+    {
+        return $MODEL_NAME$::factory()->make()->toArray();
+    }
+
+
+
+    public function test_admin_can_visit_$MODEL_NAME_SNAKE$_list_page()
+    {
+        $response = $this->actingAs($this->admin)->get(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
+
+        $response->assertOk();
+    }
+
+
+     public function test_admin_can_visit_$MODEL_NAME_SNAKE$_create_page()
+    {
+        $response = $this->actingAs($this->admin)->get(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create'));
+
+        $response->assertOk();
+    }
+
+
+    public function test_admin_can_store_$MODEL_NAME_SNAKE$()
+    {
+        $$MODEL_NAME_CAMEL$Data = $this->$MODEL_NAME_CAMEL$Data();
+
+        $response = $this->actingAs($this->admin)->post(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.store'),$$MODEL_NAME_CAMEL$Data);
+
+        $response->assertStatus(302);
+        $response->assertRedirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
+        $this->assertDatabaseHas('$MODEL_NAME_PLURAL_SNAKE$', [array_keys($$MODEL_NAME_CAMEL$Data)[0] => $$MODEL_NAME_CAMEL$Data[array_keys($$MODEL_NAME_CAMEL$Data)[0]]]);
+    }
+
+
+    public function test_admin_can_visit_$MODEL_NAME_SNAKE$_show_page()
+    {
+        $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Create();
+
+        $response = $this->actingAs($this->admin)->get(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show',$$MODEL_NAME_CAMEL$->id));
+
+        $response->assertOk();
+        $response->assertViewHas('$MODEL_NAME_CAMEL$', $$MODEL_NAME_CAMEL$);
+    }
+
+
+    public function test_admin_can_visit_$MODEL_NAME_SNAKE$_edit_page()
+    {
+        $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Create();
+
+        $response = $this->actingAs($this->admin)->get(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.edit',$$MODEL_NAME_CAMEL$->id));
+
+        $response->assertOk();
+        $response->assertViewHas('$MODEL_NAME_CAMEL$', $$MODEL_NAME_CAMEL$);
+    }
+
+
+    public function test_admin_can_update_$MODEL_NAME_SNAKE$()
+    {
+        $$MODEL_NAME_CAMEL$Data = $this->$MODEL_NAME_CAMEL$Data();
+        $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Create();
+
+        $response = $this->actingAs($this->admin)->put(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.update',$$MODEL_NAME_CAMEL$->id),$$MODEL_NAME_CAMEL$Data);
+
+        $response->assertStatus(302);
+        $response->assertRedirect(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
+        $this->assertDatabaseHas('$MODEL_NAME_PLURAL_SNAKE$', [array_keys($$MODEL_NAME_CAMEL$Data)[0] => $$MODEL_NAME_CAMEL$Data[array_keys($$MODEL_NAME_CAMEL$Data)[0]]]);
+    }
+
+
+    public function test_admin_can_delete_$MODEL_NAME_SNAKE$()
+    {
+        $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Create();
+
+        $response = $this->actingAs($this->admin)->delete(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.destroy',$$MODEL_NAME_CAMEL$->id));
+
+        $response->assertOk();
+        $this->assertDatabaseMissing('$MODEL_NAME_PLURAL_SNAKE$',['id'=>$$MODEL_NAME_CAMEL$->id]);
+    }
+
+
+ // No permission admin
+
+    public function test_no_permission_admin_cannot_access_$MODEL_NAME_SNAKE$_list_page()
+    {
+        $response = $this->actingAs($this->noPermissionAdmin)->get(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.index'));
+
+        $response->assertStatus(Response::HTTP_FORBIDDEN);
+    }
+
+
+    public function test_no_permission_admin_cannot_access_$MODEL_NAME_SNAKE$_create_page()
+    {
+        $response = $this->actingAs($this->noPermissionAdmin)->get(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.create'));
+
+        $response->assertStatus(Response::HTTP_FORBIDDEN);
+    }
+
+
+    public function test_no_permission_admin_cannot_access_$MODEL_NAME_SNAKE$_edit_page()
+    {
+        $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Create();
+
+        $response = $this->actingAs($this->noPermissionAdmin)->get(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.edit',$$MODEL_NAME_CAMEL$->id));
+
+        $response->assertStatus(Response::HTTP_FORBIDDEN);
+    }
+
+
+    public function test_no_permission_admin_cannot_access_$MODEL_NAME_SNAKE$_show_page()
+    {
+        $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Create();
+
+        $response = $this->actingAs($this->noPermissionAdmin)->get(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.show',$$MODEL_NAME_CAMEL$->id));
+
+        $response->assertStatus(Response::HTTP_FORBIDDEN);
+    }
+
+
+    public function test_no_permission_admin_cannot_store_$MODEL_NAME_SNAKE$()
+    {
+        $$MODEL_NAME_CAMEL$Data = $this->$MODEL_NAME_CAMEL$Data();
+
+        $response = $this->actingAs($this->noPermissionAdmin)->post(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.store'),$$MODEL_NAME_CAMEL$Data);
+
+        $response->assertStatus(Response::HTTP_FORBIDDEN);
+    }
+
+
+    public function test_no_permission_admin_cannot_update_$MODEL_NAME_SNAKE$()
+    {
+        $$MODEL_NAME_CAMEL$Data = $this->$MODEL_NAME_CAMEL$Data();
+        $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Create();
+
+        $response = $this->actingAs($this->noPermissionAdmin)->put(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.update',$$MODEL_NAME_CAMEL$->id),$$MODEL_NAME_CAMEL$Data);
+
+        $response->assertStatus(Response::HTTP_FORBIDDEN);
+    }
+
+
+    public function test_no_permission_admin_cannot_delete_$MODEL_NAME_SNAKE$()
+    {
+        $$MODEL_NAME_CAMEL$ = $this->$MODEL_NAME_CAMEL$Create();
+
+        $response = $this->actingAs($this->noPermissionAdmin)->delete(route('$ROUTE_NAMED_PREFIX$$MODEL_NAME_PLURAL_CAMEL$.destroy',$$MODEL_NAME_CAMEL$->id));
+
+        $response->assertStatus(Response::HTTP_FORBIDDEN);
+    }
+
+
+}

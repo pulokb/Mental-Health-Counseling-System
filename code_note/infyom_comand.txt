@@ -1,0 +1,5 @@
+php artisan infyom:scaffold NewTest2 --fieldsFile=resources\model_schemas\NewTest2.json
+php artisan infyom:scaffold UserQuery --fieldsFile=resources\model_schemas\UserQuery.json
+php artisan infyom:scaffold DoctorFeedback --fieldsFile=resources\model_schemas\DoctorFeedback.json
+php artisan infyom:scaffold Symptoms --fieldsFile=resources\model_schemas\Symptoms.json
+php artisan infyom:scaffold Suggestions --fieldsFile=resources\model_schemas\Suggestions.json
