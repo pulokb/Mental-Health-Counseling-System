@@ -1,4 +1,0 @@
-deployment:
-  web:
-    type: "php"
-    document_root: "public"
