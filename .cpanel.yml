@@ -1,0 +1,5 @@
+version: 2
+application:
+  web:
+    docroot: public
+    domain: pulokbiswas.com
