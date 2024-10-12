@@ -7,7 +7,7 @@ use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\User\PulokController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\SearchController;
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\UserLoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -16,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 // User authentication routes (prefix: user)
 Route::group(['prefix' => config('user.user_route_prefix'), 'as' => 'user.'], function () {
-    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [LoginController::class, 'login']);
-    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/login', [UserLoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [UserLoginController::class, 'login']);
+    Route::post('/logout', [UserLoginController::class, 'logout'])->name('logout');
 });
 
 
@@ -59,7 +59,7 @@ Route::group(['middleware' => ['blockIp', 'localaization']], function () {
     Route::get('suggestions/{id}', [PulokController::class, 'suggestionDetails'])->name('suggestion.details');
     Route::get('faq', [PulokController::class, 'faq'])->name('faq');
     // Route::get('blogdetails', [PulokController::class, 'details'])->name('blog.details');
-    Route::get('search', [SearchController::class, 'search'])->name('search');
+    // Route::get('search', [SearchController::class, 'search'])->name('search');
 
     // Pages routes (e.g., About)
     Route::get('about', [PageController::class, 'about'])->name('about');
