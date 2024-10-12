@@ -8,7 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
-class AdminLoginController extends Controller
+class LoginController extends Controller
 {
     /*
     |--------------------------------------------------------------------------

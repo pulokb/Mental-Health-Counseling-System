@@ -7,8 +7,8 @@ use App\Http\Controllers\User\ProfileController;
 Auth::routes();
 
 // Social Login Routes
-Route::get('login/{provider}', 'Auth\UserLoginController@redirectToProvider')->name('login.social');
-Route::get('login/{provider}/callback', 'Auth\UserLoginController@handleProviderCallback');
+Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider')->name('login.social');
+Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback');
 
 // User Routes with Middleware
 Route::group(['middleware' => ['auth', 'role:user', 'preventBackHistory', 'blockIp', 'localaization']], function () {

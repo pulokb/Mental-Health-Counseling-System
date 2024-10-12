@@ -65,7 +65,10 @@
 <!-- TEAM MEMBER SLIDER AREA START -->
     <div class="ltn__team-slider-area mb-120 mb--100">
         <div class="container">
-            <h4 class="title-2 text-center">Our Team</h4>
+            <div class="col-lg-12 text-center">
+                <h2><strong>Our Team</strong></h2> <!-- Added Bold Heading -->
+            </div>
+            {{-- <h2 class="title-2 text-center"></h2> --}}
             <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -123,7 +126,10 @@
 <!-- FEEDBACK SLIDER AREA START -->
     <div class="ltn__feedback-slider-area mb-120 mb--100">
         <div class="container">
-            <h4 class="title-2 text-center">Doctor's Feedback</h4>
+            <div class="col-lg-12 text-center">
+                <h2><strong>Doctor's Feedback</strong></h2> <!-- Added Bold Heading -->
+            </div>
+            {{-- <h2 class="title-2 text-center"></h2> --}}
             <div id="feedbackCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">

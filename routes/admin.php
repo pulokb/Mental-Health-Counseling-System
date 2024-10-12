@@ -21,15 +21,15 @@ use App\Http\Controllers\Admin\SymptomsController;
 use App\Http\Controllers\Admin\SuggestionsController;
 use App\Http\Controllers\Admin\DoctorFeedbackController;
 use App\Http\Controllers\Admin\VisitorInfoController;
-use App\Http\Controllers\Auth\Admin\AdminLoginController;
+use App\Http\Controllers\Auth\Admin\LoginController;
 use App\Models\NewTest2;
 use Illuminate\Support\Facades\Route;
 
 
 Route::group(['prefix' => config('admin.admin_route_prefix'), 'as' => 'admin.'], function () {
-    Route::get('/login', [AdminLoginController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [AdminLoginController::class, 'login']);
-    Route::post('/logout', [AdminLoginController::class, 'logout'])->name('logout');
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [LoginController::class, 'login']);
+    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 });
 //show the link request form to reset password
 Route::get('password/reset', 'Auth\Admin\ForgotPasswordController@showLinkRequestForm')->name('password.request');
