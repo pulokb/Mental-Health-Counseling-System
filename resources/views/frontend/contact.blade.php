@@ -22,94 +22,171 @@
 <!-- BREADCRUMB AREA END -->
 
 <!-- CONTACT ADDRESS AREA START -->
-<div class="ltn__contact-address-area mb-90">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
-                    <div class="ltn__contact-address-icon">
-                        <img src="view/img/icons/10.png" alt="Icon Image" style="width: 40px;"> <!-- Adjust icon size -->
-                    </div>
-                    <h3>Email Address</h3>
-                    <p><a href="mailto:pulok.contact@gmail.com" class="text-decoration-none">pulok.contact@gmail.com</a></p>
+    <div class="ltn__contact-address-area mb-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2><strong>Our Office</strong></h2> <!-- Added Bold Heading -->
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
-                    <div class="ltn__contact-address-icon">
-                        <img src="view/img/icons/11.png" alt="Icon Image" style="width: 40px;"> <!-- Adjust icon size -->
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
+                        <div class="ltn__contact-address-icon">
+                            <img src="view/img/icons/10.png" alt="Icon Image" style="width: 40px;">
+                        </div>
+                        <h3>Email Address</h3>
+                        <p><a href="mailto:pulok.contact@gmail.com" class="text-decoration-none">pulok.contact@gmail.com</a></p>
                     </div>
-                    <h3>Phone Number</h3>
-                    <p><a href="tel:+8801793651750" class="text-decoration-none">+8801793651750</a></p>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
-                    <div class="ltn__contact-address-icon">
-                        <img src="view/img/icons/12.png" alt="Icon Image" style="width: 40px;"> <!-- Adjust icon size -->
+                <div class="col-lg-4">
+                    <div class="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
+                        <div class="ltn__contact-address-icon">
+                            <img src="view/img/icons/11.png" alt="Icon Image" style="width: 40px;">
+                        </div>
+                        <h3>Phone Number</h3>
+                        <p><a href="tel:+8801793651750" class="text-decoration-none">+8801793651750</a></p>
                     </div>
-                    <h3>Office Address</h3>
-                    <p><a href="https://www.google.com/maps/place/Katasur,+Mohammadpur,+1207+Dhaka,+Bangladesh" target="_blank" class="text-decoration-none">Katasur, Mohammadpur, 1207<br>Dhaka, Bangladesh</a></p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ltn__contact-address-item ltn__contact-address-item-3 box-shadow">
+                        <div class="ltn__contact-address-icon">
+                            <img src="view/img/icons/12.png" alt="Icon Image" style="width: 40px;">
+                        </div>
+                        <h3>Office Address</h3>
+                        <p><a href="https://www.google.com/maps/place/Katasur,+Mohammadpur,+1207+Dhaka,+Bangladesh" target="_blank" class="text-decoration-none">Katasur, Mohammadpur, 1207<br>Dhaka, Bangladesh</a></p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 <!-- CONTACT ADDRESS AREA END -->
 
-<!-- CONTACT MESSAGE AREA START -->
-<div class="ltn__contact-message-area mb-120 mb--100">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="ltn__form-box contact-form-box box-shadow white-bg">
-                    <h4 class="title-2">Feedback and Question</h4>
-                    <form id="contact-form" action="{{ route('submit.feedback') }}" method="post">
-                        @csrf
+<!-- TEAM MEMBER SLIDER AREA START -->
+    <div class="ltn__team-slider-area mb-120 mb--100">
+        <div class="container">
+            <h4 class="title-2 text-center">Our Team</h4>
+            <div id="teamCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
                         <div class="row">
-                            <div class="col-md-6">
-                                <div class="input-item input-item-name ltn__custom-icon">
-                                    <input type="text" name="name" placeholder="Enter your name">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="view/img/team/ceo.png" class="card-img-top" alt="CEO">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Pulok Biswas</h5>
+                                        <p class="card-text">CEO</p>
+                                        <p><a href="mailto:johndoe@company.com">pulok.contact@gmail.com</a></p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="input-item input-item-email ltn__custom-icon">
-                                    <input type="email" name="email" placeholder="Enter email address">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="view/img/team/cfo.png" class="card-img-top" alt="CFO">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Pulok Biswas</h5>
+                                        <p class="card-text">CFO</p>
+                                        <p><a href="mailto:pulok.contact@gmail.com">pulok.contact@gmail.com</a></p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="input-item input-item-subject ltn__custom-icon">
-                                    <input type="text" name="subject" placeholder="Enter the subject">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="input-item input-item-phone ltn__custom-icon">
-                                    <input type="text" name="phone" placeholder="Enter phone number">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <img src="view/img/team/cto.png" class="card-img-top" alt="CTO">
+                                    <div class="card-body text-center">
+                                        <h5 class="card-title">Pulok Biswas</h5>
+                                        <p class="card-text">CTO</p>
+                                        <p><a href="mailto:pulok.contact@gmail.com">pulok.contact@gmail.com</a></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="input-item input-item-textarea ltn__custom-icon">
-                            <textarea name="message" placeholder="Enter message"></textarea>
-                        </div>
-                        <p><label class="input-info-save mb-0"><input type="checkbox" name="agree"> Save my name,
-                                email, and website in this browser for the next time I comment.</label></p>
-                        <div class="btn-wrapper mt-0">
-                            <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">send
-                                mail</button>
-                        </div>
-                        <p class="form-messege mb-0 mt-20"></p>
-                    </form>
+                    </div>
+                    <!-- Add more carousel-items for more team members -->
                 </div>
+                <!-- Add carousel controls -->
+                <a class="carousel-control-prev" href="#teamCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#teamCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
             </div>
         </div>
     </div>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<!-- CONTACT MESSAGE AREA END -->
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- TEAM MEMBER SLIDER AREA END -->
+
+<!-- FEEDBACK SLIDER AREA START -->
+    <div class="ltn__feedback-slider-area mb-120 mb--100">
+        <div class="container">
+            <h4 class="title-2 text-center">Doctor's Feedback</h4>
+            <div id="feedbackCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card text-center">
+                                    <img src="view/img/feedback/client1.jpg" class="rounded-circle mx-auto d-block" alt="Client 1" style="width: 80px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Sarah Johnson</h5>
+                                        <p class="card-text">Psychologists</p>
+                                        <p>"Great experience, highly recommended!"</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card text-center">
+                                    <img src="view/img/feedback/client2.jpg" class="rounded-circle mx-auto d-block" alt="Client 2" style="width: 80px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Mike Davis</h5>
+                                        <p class="card-text">Psychotherapist</p>
+                                        <p>"Professional and responsive service."</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card text-center">
+                                    <img src="view/img/feedback/client3.jpg" class="rounded-circle mx-auto d-block" alt="Client 3" style="width: 80px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Emma Thompson</h5>
+                                        <p class="card-text">Psychiatrists</p>
+                                        <p>"Highly satisfied with the results!"</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- <div class="col-md-4">
+                                <div class="card text-center">
+                                    <img src="view/img/feedback/client4.jpg" class="rounded-circle mx-auto d-block" alt="Client 3" style="width: 80px;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Emma Thompson</h5>
+                                        <p class="card-text">Student</p>
+                                        <p>"Highly satisfied with the results!"</p>
+                                    </div>
+                                </div>
+                            </div> --}}
+                        </div>
+                    </div>
+                    <!-- Add more carousel-items for more feedback -->
+                </div>
+                <!-- Add carousel controls -->
+                <a class="carousel-control-prev" href="#feedbackCarousel" role="button" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#feedbackCarousel" role="button" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- FEEDBACK SLIDER AREA END -->
+
 
 @include('layouts.footer')
