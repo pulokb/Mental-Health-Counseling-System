@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
@@ -18,7 +18,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/'; // Redirect to the root route after login
+    protected $redirectTo = '/'; // Default redirect after login
 
     /**
      * Create a new controller instance.
@@ -27,14 +27,12 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        // Redirect to / after login for authenticated users
-        $this->redirectTo = '/';
         $this->middleware(['guest', 'blockIp'])->except('logout');
     }
 
     /**
      * Handle login redirection based on user role.
-     * This is simplified to redirect all users to the home page (/).
+     * This method checks the user's email domain to determine if they are an admin.
      *
      * @param Request $request
      * @param $user
@@ -42,7 +40,13 @@ class LoginController extends Controller
      */
     protected function authenticated(Request $request, $user)
     {
-        // After login, redirect all users to the home page (/)
+        // Check if the user's email ends with '@QuMindWell.com'
+        if ($user->email && str_ends_with($user->email, '@QuMindWell.com')) {
+            // Admin login: Redirect to admin dashboard
+            return redirect()->route('dashboard');
+        }
+
+        // Regular user login: Redirect to user dashboard (home page)
         return redirect()->route('index');
     }
 
@@ -69,25 +73,20 @@ class LoginController extends Controller
         $socialEmail = $socialiteUser->getEmail();
         $socialName = $socialiteUser->getName();
 
-        // Check if the user exists, otherwise create a new one
-        $user = User::where('email', $socialiteUser->getEmail())->first();
-        if ($user) {
-            Auth::login($user);
-        } else {
-            $newUser = User::create([
-                'name' => $socialName,
-                'email' => $socialEmail,
-                'provider' => $provider,
-            ]);
-            Auth::login($newUser);
-        }
+        // Check if user exists, if not, create a new one
+        $user = User::firstOrCreate(
+            ['email' => $socialEmail],
+            ['name' => $socialName, 'provider' => $provider]
+        );
 
-        // After social login, redirect to the home page (/)
-        return redirect()->route('index');
+        Auth::login($user);
+
+        // Handle redirection based on role after social login
+        return $this->redirectAfterLogin($user);
     }
 
     /**
-     * Override the default logout method to redirect to the home page after logout.
+     * Handle logout and redirect to the home page after logout.
      *
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse
@@ -95,10 +94,23 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         $this->guard()->logout();
-
         $request->session()->invalidate();
 
-        // Redirect to the home page (/) after logout
         return $this->loggedOut($request) ?: redirect('/');
+    }
+
+    /**
+     * Determine where to redirect users based on their role after login.
+     *
+     * @param User $user
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    private function redirectAfterLogin($user)
+    {
+        if ($user->email && str_ends_with($user->email, '@QuMindWell.com')) {
+            return redirect()->route('dashboard'); // Admin dashboard
+        }
+
+        return redirect()->route('index'); // User dashboard
     }
 }
