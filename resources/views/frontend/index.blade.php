@@ -55,7 +55,7 @@
                     <div class="section-title-area ltn__section-title-2--- mb-30">
                         <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color d-none">About Us</h6>
                         <h1 class="section-title">Your faithful partner for mental health care.</h1>
-                        <p>QuMindWell connects you with qualified and experienced mental health professionals who can
+                        <p>MindQuilo connects you with qualified and experienced mental health professionals who can
                             help you with various issues such as stress, anxiety, depression, trauma, addiction,
                             relationships, and more.</p>
                     </div>
@@ -111,14 +111,14 @@
             <div class="col-lg-6 align-self-center">
                 <div class="about-us-info-wrap">
                     <div class="section-title-area ltn__section-title-2--- mb-20">
-                        <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color">QuMindWell A mental
+                        <h6 class="section-subtitle section-subtitle-2--- ltn__secondary-color">MindQuilo A mental
                             health counseling system</h6>
                         <h1 class="section-title">Accessible and Quality mental health care for everyone!
                         </h1>
                         <p>Your mind is your most valuable asset, and it deserves the best care possible. That’s why
-                            QuMindWell offers you a smart way to care for your mind, by providing you with online
+                            MindQuilo offers you a smart way to care for your mind, by providing you with online
                             counseling and more for your mental well-being.
-                            QuMindWell helps you access professional and convenient mental health care from
+                            MindQuilo helps you access professional and convenient mental health care from
                             anywhere, anytime, and at your own pace. </p>
                     </div>
                     <ul class="ltn__list-item-half clearfix">

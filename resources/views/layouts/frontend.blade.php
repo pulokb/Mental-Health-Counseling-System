@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>QuMindWell - Navigating Minds, Building Wellness</title>
+    <title>MindQuilo - Navigating Minds, Building Wellness</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -272,7 +272,7 @@
                                     <img src="view/img/logo.png" alt="Logo">
                                 </div>
                             </div>
-                            <p>QuMindWell is the smart way to care for your mind.</p>
+                            <p>MindQuilo is the smart way to care for your mind.</p>
                             <div class="footer-address">
                                 <ul>
                                     <li>
@@ -318,7 +318,7 @@
                     </div>
                     <div class="col-xl-2 col-md-6 col-sm-6 col-12">
                         <div class="footer-widget footer-menu-widget clearfix">
-                            <h4 class="footer-title">QuMindWell</h4>
+                            <h4 class="footer-title">MindQuilo</h4>
                             <div class="footer-menu">
                                 <ul>
                                     <li><a href="{{ route('about') }}">About</a></li>
@@ -379,7 +379,7 @@
                 <div class="row">
                     <div class="col-md-6 col-12">
                         <div class="ltn__copyright-design clearfix">
-                            <p>All Rights Reserved QuMindWell @ Pulok Biswas <span class="current-year"></span></p>
+                            <p>All Rights Reserved MindQuilo @ Pulok Biswas <span class="current-year"></span></p>
                         </div>
                     </div>
                     <div class="col-md-6 col-12 align-self-center">

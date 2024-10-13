@@ -44,25 +44,28 @@ public function store(DoctorFeedbackCreateRequest $request) {
     // Get the authenticated user
     $user = auth()->user();
 
-    try {
+    // try {
         // Store the feedback with the user_id
         DoctorFeedback::create(array_merge($request->all(), ['user_id' => $user->id]));
 
-        // Notify the user of success
-        notify()->success(__("Successfully Created"), __("Feedback created successfully. The doctor will respond soon."));
+        return redirect()->route('response.get');
 
-        // Check the role of the authenticated user to decide where to redirect
-        if ($user->hasRole('admin')) {
-            // Redirect the admin to the admin doctor feedback index page
-            return redirect()->route('admin.doctorFeedbacks.index');
-        } else {
-            // Redirect normal user to the response page
-            return redirect()->route('response.get');
-        }
-    } catch (\Exception $e) {
-        // Handle error, show error message or log it
-        return back()->withErrors(['error' => $e->getMessage()]);
-    }
+        // Notify the user of success
+    //     notify()->success(__("Successfully Created"), __("Feedback created successfully. The doctor will respond soon."));
+
+    //     // Check the role of the authenticated user to decide where to redirect
+    //     if ($user->hasRole('admin')) {
+    //         // Redirect the admin to the admin doctor feedback index page
+    //         return redirect()->route('admin.doctorFeedbacks.index');
+    //     } else {
+    //         // Redirect normal user to the response page
+    //         return redirect()->route('response.get');
+    //     }
+    // } catch (\Exception $e) {
+    //     // Handle error, show error message or log it
+    //     return back()->withErrors(['error' => $e->getMessage()]);
+    // }
+
 }
 
 

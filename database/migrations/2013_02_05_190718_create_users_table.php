@@ -37,7 +37,7 @@ class CreateUsersTable extends Migration
         User::create(
             [
                 'name' => 'Super Admin Pulok',
-                'email' => 'pulok@qumindWell.com',
+                'email' => 'pulok@mindquilo.com',
                 'password' => bcrypt('456456456'),
                 'phone' => '01793651750',
                 'address' => 'Dhaka Bangladesh',
@@ -52,7 +52,7 @@ class CreateUsersTable extends Migration
         User::create(
             [
                 'name' => 'Admin Pulok',
-                'email' => 'admin@qumindWell.com',
+                'email' => 'admin@mindquilo.com',
                 'password' => bcrypt('456456456'),
                 'phone' => '01793651750',
                 'address' => 'Dhaka Bangladesh',
@@ -68,28 +68,13 @@ class CreateUsersTable extends Migration
         User::create(
             [
                 'name' => 'Doctor Pulok',
-                'email' => 'doctor@qumindWell.com',
+                'email' => 'doctor@mindquilo.com',
                 'password' => bcrypt('12345678'),
                 'phone' => '01793651750',
                 'address' => 'Dhaka Bangladesh',
                 'age' => '26',
                 'gender' => 'Male',
                 'occupation' => 'Doctor',
-                'image' => 'user.jpg',
-                'email_verified_at' => now(),
-                'remember_token' => rand(100,1000000),
-            ]
-        );
-        User::create(
-            [
-                'name' => 'Pulok Student',
-                'email' => 'pulokbiswas.cse@gmail.com',
-                'password' => bcrypt('12345678'),
-                'phone' => '01793651750',
-                'address' => 'Dhaka Bangladesh',
-                'age' => '26',
-                'gender' => 'Male',
-                'occupation' => 'Student',
                 'image' => 'user.jpg',
                 'email_verified_at' => now(),
                 'remember_token' => rand(100,1000000),

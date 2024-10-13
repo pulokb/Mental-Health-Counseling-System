@@ -207,7 +207,7 @@
                                             class="dropdown-menu dropdown-menu-right">
                                             <h6 tabindex="-1" class="dropdown-header">{{ __('Profile Setting') }}</h6>
                                             @can('change-password')
-                                                <a type="button" href="{{ route('admin.change.password') }}" tabindex="0"
+                                                <a type="button" href="{{ route('admin.change.password.view') }}" tabindex="0"
                                                     class="dropdown-item">{{ __('Change Password') }}</a>
                                             @endcan
                                             <a href="{{ route('admin.logout') }}" onclick="event.preventDefault();
@@ -697,7 +697,7 @@
                                         </span>
                                     </li>
                                     <li class="nav-item">
-                                        
+
                                     </li>
                                 </ul>
                             </div>

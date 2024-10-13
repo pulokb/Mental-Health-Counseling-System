@@ -9,7 +9,7 @@
                     <i class="pe-7s-box2 icon-gradient bg-plum-plate"></i>
                 </div>
                 <div>
-                    {{ __('Welcome') }} {{ Auth::user()->name }}, {{ __('to QuMindWell') }}
+                    {{ __('Welcome') }} {{ Auth::user()->name }}, {{ __('to MindQuilo') }}
                 </div>
             </div>
         </div>

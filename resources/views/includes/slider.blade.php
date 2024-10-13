@@ -10,10 +10,10 @@
                         <div class="col-lg-12 align-self-center">
                             <div class="slide-item-info">
                                 <div class="slide-item-info-inner ltn__slide-animation">
-                                    <h6 class="slide-sub-title white-color--- animated"><span></span>QuMindWell</h6>
+                                    <h6 class="slide-sub-title white-color--- animated"><span></span>MindQuilo</h6>
                                     <h1 class="slide-title animated ">The smart way to care <br>for your mind</h1>
                                     <div class="slide-brief animated">
-                                        <p>QuMindWell offers you a smart way to care for your mind, by providing you
+                                        <p>MindQuilo offers you a smart way to care for your mind, by providing you
                                             with online counseling and more for your mental well-being</p>
                                     </div>
                                     <div class="btn-wrapper animated">
@@ -36,10 +36,10 @@
                             <div class="slide-item-info">
                                 <div class="slide-item-info-inner ltn__slide-animation">
 
-                                    <h6 class="slide-sub-title white-color--- animated"><span></span>QuMindWell</h6>
+                                    <h6 class="slide-sub-title white-color--- animated"><span></span>MindQuilo</h6>
                                     <h1 class="slide-title animated ">The smart way to care <br>for your mind</h1>
                                     <div class="slide-brief animated">
-                                        <p>QuMindWell offers you a smart way to care for your mind, by providing you
+                                        <p>MindQuilo offers you a smart way to care for your mind, by providing you
                                             with online counseling and more for your mental well-being</p>
                                     </div>
                                     <div class="btn-wrapper animated">
@@ -61,10 +61,10 @@
                         <div class="col-lg-12 align-self-center">
                             <div class="slide-item-info">
                                 <div class="slide-item-info-inner ltn__slide-animation">
-                                    <h6 class="slide-sub-title white-color--- animated"><span></span>QuMindWell</h6>
+                                    <h6 class="slide-sub-title white-color--- animated"><span></span>MindQuilo</h6>
                                     <h1 class="slide-title animated ">The smart way to care <br>for your mind</h1>
                                     <div class="slide-brief animated">
-                                        <p>QuMindWell offers you a smart way to care for your mind, by providing you
+                                        <p>MindQuilo offers you a smart way to care for your mind, by providing you
                                             with online counseling and more for your mental well-being</p>
                                     </div>
                                     <div class="btn-wrapper animated">

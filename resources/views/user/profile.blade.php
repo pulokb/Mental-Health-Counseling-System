@@ -62,8 +62,8 @@
         </div>
     </div>
 
-    <!-- Dashboard Button (Visible to Admins with qumindWell.com Email) -->
-    @if(Str::endsWith($user->email, '@qumindWell.com'))
+    <!-- Dashboard Button (Visible to Admins with mindquilo.com Email) -->
+    @if(Str::endsWith($user->email, '@mindquilo.com'))
     <div class="text-center mt-3">
         <a href="{{ route('admin.dashboard') }}" class="theme-btn-1 btn btn-effect-1 text-uppercase" target="_blank" rel="noopener noreferrer">Dashboard</a>
     </div>
@@ -145,7 +145,7 @@
                     <h4 class="title-2">Change Password</h4>
                 </div>
                 <div class="card-body">
-                    <form method="POST" id="change-password-form" action="{{ route('change.password') }}">
+                    <form method="POST" id="change-password-form" action="{{ route('user.change.password') }}">
                         @csrf
                         <div class="form-group mb-3">
                             <label for="oldpassword">{{ __('Old Password') }}</label>

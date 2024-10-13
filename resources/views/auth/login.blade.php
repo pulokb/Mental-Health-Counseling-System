@@ -41,10 +41,10 @@
                         <div class="btn-wrapper mt-0">
                             <button class="theme-btn-1 btn btn-effect-1 text-uppercase" type="submit">SIGN IN</button>
                         </div>
-                        <div class="go-to-btn mt-20">
+                        {{-- <div class="go-to-btn mt-20">
                             <!-- Update the route for password reset -->
                             <a href="{{ route('contact') }}"><small>FORGOTTEN YOUR PASSWORD?</small></a>
-                        </div>
+                        </div> --}}
                     </form>
                 </div>
             </div>
