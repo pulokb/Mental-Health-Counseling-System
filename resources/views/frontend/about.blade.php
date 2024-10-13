@@ -35,7 +35,7 @@
                         <h6 class="section-subtitle section-subtitle-2 ltn__secondary-color d-none">About Us
                         </h6>
                         <h1 class="section-title">Your faithful partner for mental health care.</h1>
-                        <p>QuMindWell connects you with qualified and experienced mental health professionals
+                        <p>MindQuilo connects you with qualified and experienced mental health professionals
                             who can help you with various issues such as stress, anxiety, depression, trauma,
                             addiction, relationships, and more.</p>
                     </div>
@@ -99,7 +99,7 @@
                     </div>
                     <div class="ltn__feature-info">
                         <h4><a href="service-details.html">Empathetic Design</a></h4>
-                        <p>At its core, design is visual storytelling. QuMindWell’s website exudes a sense of
+                        <p>At its core, design is visual storytelling. MindQuilo’s website exudes a sense of
                             tranquility. Let muted colors and stirring images create the ambiance, resonating a
                             sense of empathy.</p>
                     </div>
@@ -114,7 +114,7 @@
                     <div class="ltn__feature-info">
                         <h4><a href="service-details.html">Holistic Approach</a></h4>
                         <p>Straightforward messaging, user-friendly navigation pages. Whether you’re looking for
-                            counseling, self-help resources, or community connections, QuMindWell provides a
+                            counseling, self-help resources, or community connections, MindQuilo provides a
                             holistic experience.</p>
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="ltn__feature-info">
                         <h4><a href="service-details.html">Content</a></h4>
-                        <p>Dive into our niche-specific content—books, games, and more. QuMindWell faithfully
+                        <p>Dive into our niche-specific content—books, games, and more. MindQuilo faithfully
                             represents your mental health needs, drawing in new clients who seek quality
                             information and support.</p>
                     </div>
@@ -222,7 +222,7 @@
                     <div class="ltn__feature-info">
                         <p>Our website offers straightforward messaging, user-friendly navigation pages. Whether
                             you’re looking for counseling, self-help resources, or community connections,
-                            QuMindWell provides a holistic experience.</p>
+                            MindQuilo provides a holistic experience.</p>
                     </div>
                 </div>
             </div>
@@ -236,7 +236,7 @@
                         <h3><a href="service-details.html">Accessible Anytime, Anywhere</a></h3>
                     </div>
                     <div class="ltn__feature-info">
-                        <p>QuMindWell ensures 24/7 accessibility. Whether you’re struggling to express your pain
+                        <p>MindQuilo ensures 24/7 accessibility. Whether you’re struggling to express your pain
                             or seeking urgent assistance, our website is your reliable partner on the journey to
                             better mental well-being.</p>
                     </div>
@@ -252,7 +252,7 @@
                         <h3><a href="service-details.html">Expertly Curated Content</a></h3>
                     </div>
                     <div class="ltn__feature-info">
-                        <p>QuMindWell’s website exudes a sense of tranquility, resonating with empathy. And
+                        <p>MindQuilo’s website exudes a sense of tranquility, resonating with empathy. And
                             diverse needs. Explore our niche-specific content, including books, games, and other
                             mental health resources. </p>
                     </div>

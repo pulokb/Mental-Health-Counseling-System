@@ -27,7 +27,7 @@
                 <div class="ltn__form-box contact-form-box box-shadow white-bg">
                     <h2 class="title-2">Test Your Mental Health</h2>
 
-                    <form id="healthForm" action="{{ route('autoreport') }}" method="post">
+                    <form id="healthForm" action="{{ route('autoreport.post') }}" method="post">
 
                         @csrf
 

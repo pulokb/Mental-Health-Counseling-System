@@ -22,7 +22,7 @@
             <div class="card-body">
                 <div class="alert alert-danger" id="error" style="display: none"></div>
                 <form class="" data-parsley-validate method="POST" id="change-password-form"
-                    action="{{ route('admin.change.password') }}">
+                    action="{{ route('admin.change.password.view') }}">
                     @csrf
 
 

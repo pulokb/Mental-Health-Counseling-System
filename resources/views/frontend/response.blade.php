@@ -34,6 +34,7 @@
                         <!-- Feedback card start -->
                         <div class="card shadow-sm border-0">
                             <div class="card-body">
+                                <h6 class="card-title">{{ Auth::user()->name }}'s {{ $feedback->created_at->format('F d, Y') }} Report</h6>
                                 <h5 class="card-title">Overall Generated Score: {{ $feedback->overall_result }}</h5>
 
                                 <!-- Status with color based on value -->

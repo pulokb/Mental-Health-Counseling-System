@@ -1,5 +1,5 @@
 {{-- @include('layouts.menu') --}}
-<li class="app-sidebar__heading">{{ __('Welcome To The QuMindWell') }}</li>
+<li class="app-sidebar__heading">{{ __('Welcome To The MindQuilo') }}</li>
 {{-- Dashboard --}}
 @can('dashboard-view')
     <li class="">

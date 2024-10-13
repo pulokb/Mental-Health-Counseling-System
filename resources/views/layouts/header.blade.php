@@ -5,7 +5,7 @@
     <base href="/public">
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>QuMindWell - Navigating Minds, Building Wellness</title>
+    <title>MindQuilo - Navigating Minds, Building Wellness</title>
     <meta name="robots" content="noindex, follow" />
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -111,7 +111,7 @@
                                     @else
                                     <li>
                                         <a href="{{ route('profilev') }}" role="button" aria-haspopup="true" aria-expanded="false">
-                                            {{ Auth::user()->name }}
+                                           Hello {{ Auth::user()->name }}
                                         </a>
                                         <ul>
                                             <li><a href="{{ route('response.get') }}">{{ __('My Feedback') }}</a></li>
@@ -184,7 +184,7 @@
                 @else
                     <li>
                         <a href="{{ route('profilev') }}" role="button" aria-haspopup="true" aria-expanded="false">
-                            {{ Auth::user()->name }}
+                           Hello {{ Auth::user()->name }}
                         </a>
                         <ul>
                             <li><a href="{{ route('response.get') }}">{{ __('My Feedback') }}</a></li>

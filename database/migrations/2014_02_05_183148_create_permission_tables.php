@@ -186,7 +186,7 @@ class CreatePermissionTables extends Migration
                 'group_name' => 'profile',
                 'permissions' => [
                     // profile Permissions
-                    ['name' => 'change-password', 'route' => route('admin.change.password'), 'search_status' => 1],
+                    ['name' => 'change-password', 'route' => route('admin.change.password.view'), 'search_status' => 1],
                 ]
             ],
             [
@@ -279,23 +279,6 @@ class CreatePermissionTables extends Migration
                     'dashboard-view',
                 ]
             ],
-            // [
-            //     'group_name' => 'user',
-            //     'permissions' => [
-            //         // user Permissions
-            //         'user-create',
-            //         'user-view',
-            //         'user-update',
-            //         'user-delete',
-            //     ]
-            // ],
-            // [
-            //     'group_name' => 'role',
-            //     'permissions' => [
-            //         // role Permissions
-            //         'role-view',
-            //     ]
-            // ],
             [
                 'group_name' => 'profile',
                 'permissions' => [
@@ -321,22 +304,6 @@ class CreatePermissionTables extends Migration
                     'Language-set-default',
                 ]
             ],
-            // [
-            //     'group_name' => 'setting',
-            //     'permissions' => [
-            //         // profile Permissions
-            //         'backup',
-            //         'setting-view',
-            //     ]
-            // ],
-            // [
-            //     'group_name' => 'others',
-            //     'permissions' => [
-            //         // profile Permissions
-            //         'contact-view',
-            //         'feedback-view',
-            //     ]
-            // ],
 
 
         ];
@@ -381,8 +348,6 @@ class CreatePermissionTables extends Migration
         $admin->assignRole('admin');
         $staff = User::find(3);
         $staff->assignRole('doctor');
-        $user = User::find(4);
-        $user->assignRole('user');
     }
 
     /**

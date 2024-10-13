@@ -31,9 +31,10 @@ Route::group(['middleware' => ['blockIp', 'localaization']], function () {
     // Homepage route
     Route::get('/', [IndexController::class, 'index'])->name('index');
 
-    // Change Password Routes
-    Route::get('change-password', [ProfileController::class, 'changePasswordView'])->name('change.password');
-    Route::post('change-password', [ProfileController::class, 'changePassword'])->name('change.password');
+    // Change Password Routes for  user profile
+    Route::get('user-change-password', [ProfileController::class, 'changePasswordView'])->name('user.change.password.view');
+    Route::post('user-change-password', [ProfileController::class, 'changePassword'])->name('user.change.password');
+
 
     // Profile Routes
     Route::get('profile', [ProfileController::class, 'profileView'])->name('profilev'); // Fixed profile route
@@ -46,20 +47,16 @@ Route::group(['middleware' => ['blockIp', 'localaization']], function () {
 
     // PulokController routes (symptoms, suggestions, etc.)
     Route::get('queryform', [PulokController::class, 'queryform'])->name('queryform');
-    Route::get('autoreport', [PulokController::class, 'autoreport'])->name('autoreport');
-    Route::post('autoreport', [PulokController::class, 'autoreport'])->name('autoreport');
+    Route::get('autoreport', [PulokController::class, 'autoreport'])->name('autoreport.get');
+    Route::post('autoreport', [PulokController::class, 'autoreport'])->name('autoreport.post');
     Route::get('response', [PulokController::class, 'response'])->name('response.get');
     Route::post('response', [PulokController::class, 'response'])->name('response.post');
-
-    // Route::post('/autoreport/store', [PulokController::class, 'store'])->name('autoreport.store');
 
     Route::get('symptoms', [PulokController::class, 'symptoms'])->name('symptoms');
     Route::get('symptoms/{id}', [PulokController::class, 'symptomsDetails'])->name('symptom.details');
     Route::get('suggestions', [PulokController::class, 'suggestions'])->name('suggestions');
     Route::get('suggestions/{id}', [PulokController::class, 'suggestionDetails'])->name('suggestion.details');
     Route::get('faq', [PulokController::class, 'faq'])->name('faq');
-    // Route::get('blogdetails', [PulokController::class, 'details'])->name('blog.details');
-    // Route::get('search', [SearchController::class, 'search'])->name('search');
 
     // Pages routes (e.g., About)
     Route::get('about', [PageController::class, 'about'])->name('about');
@@ -78,7 +75,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('newTest2s', App\Http\Controllers\Admin\NewTest2Controller::class, ['as' => 'admin']);
     Route::resource('userQueries', App\Http\Controllers\Admin\UserQueryController::class, ['as' => 'admin']);
     Route::resource('doctorFeedbacks', App\Http\Controllers\Admin\DoctorFeedbackController::class, ['as' => 'admin']);
-    // Route::post('doctorFeedbacks', [App\Http\Controllers\Admin\DoctorFeedbackController::class, 'store'])->name('admin.doctorFeedbacks.store');
     Route::resource('symptoms', App\Http\Controllers\Admin\SymptomsController::class, ['as' => 'admin']);
     Route::resource('suggestions', App\Http\Controllers\Admin\SuggestionsController::class, ['as' => 'admin']);
 });
