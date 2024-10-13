@@ -22,11 +22,11 @@ use App\Http\Controllers\Admin\VisitorInfoController;
 use App\Http\Controllers\Auth\Admin\LoginController;
 use Illuminate\Support\Facades\Route;
 
-Route::group(['prefix' => config('admin.admin_route_prefix'), 'as' => 'admin.'], function () {
-    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [LoginController::class, 'login']);
-    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
-});
+// Route::group(['prefix' => config('admin.admin_route_prefix'), 'as' => 'admin.'], function () {
+//     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+//     Route::post('/login', [LoginController::class, 'login']);
+//     Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+// });
 
 // Password Reset Routes
 Route::get('password/reset', 'Auth\Admin\ForgotPasswordController@showLinkRequestForm')->name('password.request');
@@ -130,7 +130,7 @@ Route::group(['middleware' => ['auth', 'preventBackHistory', 'notUser', 'localai
         Route::resource('symptoms', SymptomsController::class);
         Route::resource('suggestions', SuggestionsController::class);
         Route::resource('doctorFeedbacks', DoctorFeedbackController::class);
-        Route::resource('test2', NewTest2Controller::class);
-        Route::resource('userQueries', UserQueryController::class);
+        // Route::resource('test2', NewTest2Controller::class);
+        // Route::resource('userQueries', UserQueryController::class);
     });
 });

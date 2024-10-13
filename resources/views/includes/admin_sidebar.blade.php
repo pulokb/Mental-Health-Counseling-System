@@ -211,7 +211,7 @@
 @endIf
 
 
-<li class="">
+{{-- <li class="">
     <a href="{{ route('admin.logout') }}" onclick="event.preventDefault();
     document.g                        etElementById('logout-form').submit();">
         <i class="metismenu-icon pe-7s-back"></i>
@@ -220,7 +220,7 @@
     <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
         @csrf
     </form>
-</li>
+</li> --}}
 @can('NewTest2-view')
 <li class="">
     <a href="{{route('admin.newTest2s.index')}}" class="{{ Request::is(config('admin.admin_route_prefix').'/newTest2s**') ? 'mm-active' : '' }}">

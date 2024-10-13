@@ -216,18 +216,18 @@ class CreatePermissionTables extends Migration
                     ['name' => 'log-activity-configure', 'route' => NULL, 'search_status' => 0],
                 ]
             ],
-            [
-                'group_name' => 'Language',
-                'permissions' => [
-                    // Language Permissions
-                    ['name' => 'Language-create', 'route' => route('admin.languages.create'), 'search_status' => 1],
-                    ['name' => 'Language-view', 'route' => route('admin.languages.index'), 'search_status' => 1],
-                    ['name' => 'Language-update', 'route' => NULL, 'search_status' => 0],
-                    ['name' => 'Language-delete', 'route' => NULL, 'search_status' => 0],
-                    ['name' => 'Language-translate', 'route' => NULL, 'search_status' => 0],
-                    ['name' => 'Language-set-default', 'route' => NULL, 'search_status' => 0],
-                ]
-            ],
+            // [
+            //     'group_name' => 'Language',
+            //     'permissions' => [
+            //         // Language Permissions
+            //         ['name' => 'Language-create', 'route' => route('admin.languages.create'), 'search_status' => 1],
+            //         ['name' => 'Language-view', 'route' => route('admin.languages.index'), 'search_status' => 1],
+            //         ['name' => 'Language-update', 'route' => NULL, 'search_status' => 0],
+            //         ['name' => 'Language-delete', 'route' => NULL, 'search_status' => 0],
+            //         ['name' => 'Language-translate', 'route' => NULL, 'search_status' => 0],
+            //         ['name' => 'Language-set-default', 'route' => NULL, 'search_status' => 0],
+            //     ]
+            // ],
             // [
             //     'group_name' => 'Frontend CMS',
             //     'permissions' => [
@@ -294,16 +294,16 @@ class CreatePermissionTables extends Migration
                     'Notification-mark-read',
                 ]
             ],
-            [
-                'group_name' => 'Language',
-                'permissions' => [
-                    // Language Permissions
-                    'Language-view',
-                    'Language-update',
-                    'Language-translate',
-                    'Language-set-default',
-                ]
-            ],
+            // [
+            //     'group_name' => 'Language',
+            //     'permissions' => [
+            //         // Language Permissions
+            //         'Language-view',
+            //         'Language-update',
+            //         'Language-translate',
+            //         'Language-set-default',
+            //     ]
+            // ],
 
 
         ];
