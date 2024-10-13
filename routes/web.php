@@ -16,10 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 // User authentication routes (prefix: user)
 Route::group(['prefix' => config('user.user_route_prefix'), 'as' => 'user.'], function () {
-    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-    Route::post('/login', [LoginController::class, 'login']);
-    Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+    Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
+    Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 });
+
 
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register'); // Show the registration form

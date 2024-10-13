@@ -210,11 +210,11 @@
                                                 <a type="button" href="{{ route('admin.change.password.view') }}" tabindex="0"
                                                     class="dropdown-item">{{ __('Change Password') }}</a>
                                             @endcan
-                                            <a href="{{ route('admin.logout') }}" onclick="event.preventDefault();
+                                            {{-- <a href="{{ route('admin.logout') }}" onclick="event.preventDefault();
                                                             document.getElementById('logout-form').submit();"
                                                 type="button" tabindex="0" class="dropdown-item">{{ __('Logout') }}</a>
                                             <form id="logout-form" action="{{ route('admin.logout') }}" method="POST"
-                                                style="display: none;">
+                                                style="display: none;"> --}}
                                                 @csrf
                                             </form>
                                         </div>
