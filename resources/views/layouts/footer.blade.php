@@ -134,4 +134,5 @@
     <script src="{{ asset('view/js/plugins.js') }} "></script>
     <!-- Main JS -->
     <script src="{{ asset('view/js/main.js') }}"></script>
+
 </footer>

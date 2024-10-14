@@ -16,7 +16,7 @@
 12. Product Details Page
 13. Isotope Gallery Active  ( Gallery / Portfolio )
 14. LightCase jQuery Active
-15. Slider One Active 
+15. Slider One Active
 16. Product Slider One
 17. Tab Product Slider One
 18. Blog Slider One
@@ -24,10 +24,10 @@
 20. Testimonial Slider - 2
 21. Testimonial Slider - 3
 22. Category Slider
-23. Image Slide  - 1 (Screenshot) 
+23. Image Slide  - 1 (Screenshot)
 24. Image Slide - 2
 25. Image Slide - 3
-26. Image Slide - 4 
+26. Image Slide - 4
 27. Brand Logo
 28. Blog Gallery (Blog Page )
 29. Countdown
@@ -38,224 +38,136 @@
 34. scrollUp active
 35. Parallax active
 36. Header menu sticky
-
-
-
 ======================================
 [ End table content ]
 ======================================*/
 
 (function($) {
-  "use strict";
+    "use strict";
 
-    jQuery(document).ready(function(){
-      
-        /* --------------------------------------------------------
-            1. Variables
-        --------------------------------------------------------- */
-        var $window = $(window),
-        $body = $('body');
+    $(function() {
+      // Initialize tooltips
+    //   $('[data-toggle="tooltip"]').tooltip();
 
-        /* --------------------------------------------------------
-            2. Mobile Menu
-        --------------------------------------------------------- */
-         /* ---------------------------------
-            Utilize Function 
-        ----------------------------------- */
-        (function () {
-            var $ltn__utilizeToggle = $('.ltn__utilize-toggle'),
-                $ltn__utilize = $('.ltn__utilize'),
-                $ltn__utilizeOverlay = $('.ltn__utilize-overlay'),
-                $mobileMenuToggle = $('.mobile-menu-toggle');
-            $ltn__utilizeToggle.on('click', function (e) {
-                e.preventDefault();
-                var $this = $(this),
-                    $target = $this.attr('href');
-                $body.addClass('ltn__utilize-open');
-                $($target).addClass('ltn__utilize-open');
-                $ltn__utilizeOverlay.fadeIn();
-                if ($this.parent().hasClass('mobile-menu-toggle')) {
-                    $this.addClass('close');
-                }
-            });
-            $('.ltn__utilize-close, .ltn__utilize-overlay').on('click', function (e) {
-                e.preventDefault();
-                $body.removeClass('ltn__utilize-open');
-                $ltn__utilize.removeClass('ltn__utilize-open');
-                $ltn__utilizeOverlay.fadeOut();
-                $mobileMenuToggle.find('a').removeClass('close');
-            });
-        })();
+      /* --------------------------------------------------------
+          1. Variables
+      --------------------------------------------------------- */
+      var $window = $(window),
+          $body = $('body');
 
-        /* ------------------------------------
-            Utilize Menu
-        ----------------------------------- */
-        function mobileltn__utilizeMenu() {
-            var $ltn__utilizeNav = $('.ltn__utilize-menu, .overlay-menu'),
-                $ltn__utilizeNavSubMenu = $ltn__utilizeNav.find('.sub-menu');
+      /* --------------------------------------------------------
+          2. Mobile Menu
+      --------------------------------------------------------- */
+      (function() {
+        var $ltnUtilizeToggle = $('.ltn__utilize-toggle'),
+            $ltnUtilize = $('.ltn__utilize'),
+            $ltnUtilizeOverlay = $('.ltn__utilize-overlay'),
+            $mobileMenuToggle = $('.mobile-menu-toggle');
 
-            /*Add Toggle Button With Off Canvas Sub Menu*/
-            $ltn__utilizeNavSubMenu.parent().prepend('<span class="menu-expand"></span>');
+        $ltnUtilizeToggle.on('click', function(e) {
+          e.preventDefault();
+          var $this = $(this),
+              $target = $this.attr('href');
+          $body.addClass('ltn__utilize-open');
+          $($target).addClass('ltn__utilize-open');
+          $ltnUtilizeOverlay.fadeIn();
+          if ($this.parent().hasClass('mobile-menu-toggle')) {
+            $this.addClass('close');
+          }
+        });
 
-            /*Category Sub Menu Toggle*/
-            $ltn__utilizeNav.on('click', 'li a, .menu-expand', function (e) {
-                var $this = $(this);
-                if ($this.attr('href') === '#' || $this.hasClass('menu-expand')) {
-                    e.preventDefault();
-                    if ($this.siblings('ul:visible').length) {
-                        $this.parent('li').removeClass('active');
-                        $this.siblings('ul').slideUp();
-                        $this.parent('li').find('li').removeClass('active');
-                        $this.parent('li').find('ul:visible').slideUp();
-                    } else {
-                        $this.parent('li').addClass('active');
-                        $this.closest('li').siblings('li').removeClass('active').find('li').removeClass('active');
-                        $this.closest('li').siblings('li').find('ul:visible').slideUp();
-                        $this.siblings('ul').slideDown();
-                    }
-                }
-            });
+        $('.ltn__utilize-close, .ltn__utilize-overlay').on('click', function(e) {
+          e.preventDefault();
+          $body.removeClass('ltn__utilize-open');
+          $ltnUtilize.removeClass('ltn__utilize-open');
+          $ltnUtilizeOverlay.fadeOut();
+          $mobileMenuToggle.find('a').removeClass('close');
+        });
+      })();
+
+      /* ------------------------------------
+          Utilize Menu
+      ----------------------------------- */
+      function mobileUtilizeMenu() {
+        var $ltnUtilizeNav = $('.ltn__utilize-menu, .overlay-menu'),
+            $ltnUtilizeNavSubMenu = $ltnUtilizeNav.find('.sub-menu');
+
+        $ltnUtilizeNavSubMenu.parent().prepend('<span class="menu-expand"></span>');
+
+        $ltnUtilizeNav.on('click', 'li a, .menu-expand', function(e) {
+          var $this = $(this);
+          if ($this.attr('href') === '#' || $this.hasClass('menu-expand')) {
+            e.preventDefault();
+            $this.parent('li').toggleClass('active').siblings().removeClass('active').find('ul:visible').slideUp();
+            $this.siblings('ul').slideToggle();
+          }
+        });
+      }
+      mobileUtilizeMenu();
+
+      /* --------------------------------------------------------
+          3. Mega Menu
+      --------------------------------------------------------- */
+      $('.mega-menu').each(function() {
+        if ($(this).children('li').length) {
+          $(this).addClass('column-' + $(this).children('li').length);
         }
-        mobileltn__utilizeMenu();
+      });
 
-        /* --------------------------------------------------------
-            3. Mega Menu
-        --------------------------------------------------------- */
-        $('.mega-menu').each(function(){
-            if($(this).children('li').length){
-                var ulChildren = $(this).children('li').length;
-                $(this).addClass('column-'+ulChildren)
-            }
-        });
-        
+      $(".mega-menu").parent().addClass("mega-menu-parent");
 
-        /* Remove Attribute( href ) from sub-menu title in mega-menu */
-        /*
-        $('.mega-menu > li > a').removeAttr('href');
-        */
+      /* --------------------------------------------------------
+          4. One Page Navigation ( jQuery Easing Plugin )
+      --------------------------------------------------------- */
+      $('a.page-scroll').on('click', function(event) {
+        var $anchor = $(this);
+        $('html, body').stop().animate({
+          scrollTop: $($anchor.attr('href')).offset().top
+        }, 1500, 'easeInOutExpo');
+        event.preventDefault();
+      });
 
+      /* --------------------------------------------------------
+          5. Toggle Search
+      -------------------------------------------------------- */
+      $('.header-search-1').on('click', function() {
+        $('.header-search-1, .header-search-1-form').toggleClass('search-open');
+        return false;
+      });
 
-        /* Mega Munu  */
-        /* $(".mega-menu").parent().css({"position": "inherit"}); */
-        $(".mega-menu").parent().addClass("mega-menu-parent");
-        
+      /* ---------------------------------------------------------
+          6. Current Year Copyright area
+      --------------------------------------------------------- */
+      $(".current-year").text(new Date().getFullYear());
 
-        /* Add space for Elementor Menu Anchor link */
-        $( window ).on( 'elementor/frontend/init', function() {
-            elementorFrontend.hooks.addFilter( 'frontend/handlers/menu_anchor/scroll_top_distance', function( scrollTop ) {
-                return scrollTop - 75;
-            });
-        });
+      /* ---------------------------------------------------------
+          7. Background Image
+      --------------------------------------------------------- */
+      $('.bg-image, .bg-image-top').each(function() {
+        var $bgImage = $(this).data('bs-bg');
+        $(this).css('background-image', 'url(' + $bgImage + ')');
+      });
 
-        /* --------------------------------------------------------
-            3-2. Category Menu
-        --------------------------------------------------------- */
+      /* ---------------------------------------------------------
+          8. WOW.js init
+      --------------------------------------------------------- */
+      new WOW().init();
 
-        $('.ltn__category-menu-title').on('click', function(){
-            $('.ltn__category-menu-toggle').slideToggle(500);
-        });	
+      /* ---------------------------------------------------------
+          9. Tooltip
+      --------------------------------------------------------- */
+      $('[data-bs-toggle="tooltip"]').tooltip();
 
-        /* Category Menu More Item show */
-        $('.ltn__category-menu-more-item-parent').on('click', function(){
-            $('.ltn__category-menu-more-item-child').slideToggle();
-            $(this).toggleClass('rx-change');
+      // Tooltip Initialization for Bootstrap 5
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(function (tooltipElement) {
+        new bootstrap.Tooltip(tooltipElement);
+    });
 
-        });
+      /* --------------------------------------------------------
+          10. Nice Select
+      --------------------------------------------------------- */
+      $('select').niceSelect();
 
-        /* Category Submenu Column Count */
-        $('.ltn__category-submenu').each(function(){
-            if($(this).children('li').length){
-                var ulChildren = $(this).children('li').length;
-                $(this).addClass('ltn__category-column-no-'+ulChildren)
-            }
-        });
-
-        /* Category Menu Responsive */
-        function ltn__CategoryMenuToggle(){
-            $('.ltn__category-menu-toggle .ltn__category-menu-drop > a').on('click', function(){
-            if($(window).width() < 991){
-                $(this).removeAttr('href');
-                var element = $(this).parent('li');
-                if (element.hasClass('open')) {
-                    element.removeClass('open');
-                    element.find('li').removeClass('open');
-                    element.find('ul').slideUp();
-                }
-                else {
-                    element.addClass('open');
-                    element.children('ul').slideDown();
-                    element.siblings('li').children('ul').slideUp();
-                    element.siblings('li').removeClass('open');
-                    element.siblings('li').find('li').removeClass('open');
-                    element.siblings('li').find('ul').slideUp();
-                }
-            }
-            });
-            $('.ltn__category-menu-toggle .ltn__category-menu-drop > a').append('<span class="expand"></span>');
-        }
-        ltn__CategoryMenuToggle();
-
-
-        /* ---------------------------------------------------------
-            4. One Page Navigation ( jQuery Easing Plugin )
-        --------------------------------------------------------- */
-        // jQuery for page scrolling feature - requires jQuery Easing plugin
-        $(function() {
-            $('a.page-scroll').bind('click', function(event) {
-                var $anchor = $(this);
-                $('html, body').stop().animate({
-                    scrollTop: $($anchor.attr('href')).offset().top
-                }, 1500, 'easeInOutExpo');
-                event.preventDefault();
-            });
-        });
-
-
-        /* --------------------------------------------------------
-            5. Toogle Search
-        -------------------------------------------------------- */
-        // Handle click on toggle search button
-        $('.header-search-1').on('click', function() {
-            $('.header-search-1, .header-search-1-form').toggleClass('search-open');
-            return false;
-        });
-
-
-        /* ---------------------------------------------------------
-            6. Current Year Copyright area
-        --------------------------------------------------------- */
-        $(".current-year").text((new Date).getFullYear());
-
-
-        /* ---------------------------------------------------------
-            7. Background Image
-        --------------------------------------------------------- */
-        var $backgroundImage = $('.bg-image, .bg-image-top');
-        $backgroundImage.each(function() {
-            var $this = $(this),
-                $bgImage = $this.data('bs-bg');
-            $this.css('background-image', 'url('+$bgImage+')');
-        });
-
-
-        /* ---------------------------------------------------------
-            8. wow js init
-        --------------------------------------------------------- */
-        new WOW().init();
-
-
-        /* ---------------------------------------------------------
-            9. Tooltip
-        --------------------------------------------------------- */
-        $('[data-bs-toggle="tooltip"]').tooltip();
-
-
-        /* --------------------------------------------------------
-            10. Nice Select
-        --------------------------------------------------------- */
-        $('select').niceSelect();
-
-        
         /* --------------------------------------------------------
             11. Default active and hover item active
         --------------------------------------------------------- */
@@ -308,7 +220,7 @@
                 }
             ]
         });
-                        
+
         /* --------------------------------------------------------
             13. Isotope Gallery Active  ( Gallery / Portfolio )
         -------------------------------------------------------- */
@@ -348,7 +260,7 @@
         });
 
         /* --------------------------------------------------------
-            15. Slider One Active 
+            15. Slider One Active
         --------------------------------------------------------- */
         $('.ltn__slide-one-active').slick({
             autoplay: false,
@@ -404,7 +316,7 @@
             new WOW().init();
         });
 
-        
+
         /*----------------------
             Slider 11 active
         -----------------------*/
@@ -1156,7 +1068,7 @@
                 }
             ]
         });
-        
+
         /* --------------------------------------------------------
             21. Testimonial Slider - 6
         --------------------------------------------------------- */
@@ -1330,7 +1242,7 @@
 
 
         /* --------------------------------------------------------
-            23. Image Slide  - 1 (Screenshot) 
+            23. Image Slide  - 1 (Screenshot)
         --------------------------------------------------------- */
         $('.ltn__image-slider-1-active').slick({
             arrows: true,
@@ -1466,7 +1378,7 @@
 
 
         /* --------------------------------------------------------
-            26. Image Slide - 4 
+            26. Image Slide - 4
         --------------------------------------------------------- */
         $('.ltn__image-slider-4-active').slick({
             rtl: false,
@@ -1771,9 +1683,9 @@
           delay: 10,
           time: 2000
         });
-        $('.counter').addClass('animated fadeInDownBig');  
+        $('.counter').addClass('animated fadeInDownBig');
         $('h3').addClass('animated fadeIn');
-        
+
 
         /* --------------------------------------------------------
             31. Instagram Feed
@@ -1855,7 +1767,7 @@
             }
         });
         $( ".amount" ).val( "$" + $( ".slider-range" ).slider( "values", 0 ) +
-        " - $" + $( ".slider-range" ).slider( "values", 1 ) ); 
+        " - $" + $( ".slider-range" ).slider( "values", 1 ) );
 
 
         /* --------------------------------------------------------
@@ -1868,11 +1780,11 @@
             var oldValue = $button.parent().find("input").val();
             if ($button.text() == "+") {
                 var newVal = parseFloat(oldValue) + 1;
-            } 
+            }
             else {
                 if (oldValue > 0) {
                     var newVal = parseFloat(oldValue) - 1;
-                } 
+                }
                 else {
                     newVal = 0;
                 }
@@ -1895,8 +1807,8 @@
 	    /* --------------------------------------------------------
             35. Parallax active ( About Section  )
         -------------------------------------------------------- */
-        /* 
-        > 1 page e 2 ta call korle 1 ta kaj kore 
+        /*
+        > 1 page e 2 ta call korle 1 ta kaj kore
         */
         if($('.ltn__parallax-effect-active').length){
             var scene = $('.ltn__parallax-effect-active').get(0);
@@ -2047,14 +1959,14 @@
     /* --------------------------------------------------------
         36. Header menu sticky
     -------------------------------------------------------- */
-    $(window).on('scroll',function() {    
+    $(window).on('scroll',function() {
         var scroll = $(window).scrollTop();
         if (scroll < 445) {
             $(".ltn__header-sticky").removeClass("sticky-active");
         } else {
             $(".ltn__header-sticky").addClass("sticky-active");
         }
-    }); 
+    });
 
 
     $(window).on('load',function(){
@@ -2071,5 +1983,5 @@
     });
 
 
-  
+
 })(jQuery);

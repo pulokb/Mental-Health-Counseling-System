@@ -1,0 +1,132 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Links */
+a {
+    color: #0A9A73;
+    text-decoration: none;
+}
+a:hover {
+    color: #05664c;
+    text-decoration: underline;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #343a40;
+    color: white;
+}
+.navbar a {
+    color: white;
+}
+.navbar a:hover {
+    color: #0A9A73;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    background-color: #0A9A73;
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #0A9A73;
+}
+
+/* Form Elements */
+input[type="text"], input[type="email"], textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+input[type="submit"] {
+    background-color: #28a745;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Containers and Layout */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+.col {
+    flex: 1;
+    padding: 15px;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+footer a {
+    color: #0A9A73;
+}
+footer a:hover {
+    color: #0A9A73;
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+
+.mt-20 {
+    margin-top: 20px;
+}
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.p-20 {
+    padding: 20px;
+}

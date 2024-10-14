@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{{ asset('view/css/plugins.css') }}">
     <link rel="stylesheet" href="{{ asset('view/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('view/css/responsive.css') }}">
-    <link rel="stylesheet" href="{{ asset('view/css/custom.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('view/css/custom.css') }}"> --}}
 
     <!-- HEADER AREA START (header-5) -->
     <header class="ltn__header-area ltn__header-5 ltn__header-logo-and-mobile-menu-in-mobile--- ltn__header-logo-and-mobile-menu--- ltn__header-transparent gradient-color-4---">
