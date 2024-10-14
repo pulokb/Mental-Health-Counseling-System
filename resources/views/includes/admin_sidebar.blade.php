@@ -221,7 +221,7 @@
         @csrf
     </form>
 </li> --}}
-@can('NewTest2-view')
+{{-- @can('NewTest2-view')
 <li class="">
     <a href="{{route('admin.newTest2s.index')}}" class="{{ Request::is(config('admin.admin_route_prefix').'/newTest2s**') ? 'mm-active' : '' }}">
         <i class="metismenu-icon pe-7s-menu"></i>
@@ -237,7 +237,7 @@
         {{ __('User Queries') }}
     </a>
 </li>
-@endcan
+@endcan --}}
 
 @can('DoctorFeedback-view')
 <li class="">
