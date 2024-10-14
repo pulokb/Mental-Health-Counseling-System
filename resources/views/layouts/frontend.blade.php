@@ -19,7 +19,7 @@
     <!-- Responsive css -->
     <link rel="stylesheet" href="{{ asset('view/css/responsive.css') }}">
     <!-- Custom Stylesheet (Add your custom styles here) -->
-    <link rel="stylesheet" href="{{ asset('view/css/custom.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('view/css/custom.css') }}"> --}}
 </head>
 
 <body>
@@ -407,10 +407,11 @@
         </div>
     </div>
     <!-- preloader area end -->
-    <!-- All JS Plugins -->
+    <script src="{{ asset('view/js/jquery.js') }}"></script>
+    <script src="{{ asset('view/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('view/js/plugins.js') }}"></script>
-    <!-- Main JS -->
     <script src="{{ asset('view/js/main.js') }}"></script>
+    
 </body>
 
 </html>
