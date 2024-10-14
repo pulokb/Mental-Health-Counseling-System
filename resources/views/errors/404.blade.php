@@ -28,7 +28,7 @@
 }
 </style>
 
-<link type="text/css" rel="stylesheet" href="css/style.css" />
+<link type="text/css" rel="stylesheet" href="view/css/style.css" />
 
 
 <!--[if lt IE 9]>
