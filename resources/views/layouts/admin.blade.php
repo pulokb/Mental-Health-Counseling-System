@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Language" content="en">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>@yield('title')</title>
+    <title>MindQuilo - Navigating Minds, Building Wellness</title>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
     <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
     <meta name="description" content="This is an example dashboard created using build-in elements and components.">
     <meta name="msapplication-tap-highlight" content="no">
+    <link rel="shortcut icon" href="{{ asset('view/img/favicon.png') }}" type="image/x-icon" />
     <!--
     =========================================================
     * ArchitectUI HTML Theme Dashboard - v1.0.0
@@ -44,14 +45,16 @@
             class="app-header header-shadow
         {{ setting('admin_header_color') ?? 'bg-asteroid header-text-light' }}">
             <div class="app-header__logo">
-                <a href="{{ route('admin.dashboard') }}">
+                {{-- <a href="{{ route('admin.dashboard') }}">
                     <div class="logo-src"
                         @if (setting('admin_logo')) style="--background: url({{ asset('images/' . setting('admin_logo')) }})"
                 @else
 
                 style="--background: url(assets/images/logo.png)" @endif>
                     </div>
-                </a>
+                </a> --}}
+
+                <a href="{{ route('admin.dashboard') }}"><img src="{{ asset('view/img/logo.png') }}" alt="Logo"></a>
                 <div class="header__pane ml-auto">
                     <div>
                         <button type="button" class="hamburger close-sidebar-btn hamburger--elastic"

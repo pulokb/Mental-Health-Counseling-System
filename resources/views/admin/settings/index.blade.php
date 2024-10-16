@@ -26,7 +26,7 @@
                         <div class="form-group">
                             <label for="site_title">{{ __('Site Title') }}</label>
                             <input required type="text" name="site_title" id="site_title" class="form-control"
-                                value="{{ env('APP_NAME') }}">
+                                value=" MindQuilo ">
                         </div>
                         <div class="form-group">
                             <label for="site_title">{{ __('Site Description') }}</label>
