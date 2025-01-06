@@ -21,6 +21,10 @@
     <b>{!! Form::label('occupation',  __('Occupation')) !!}</b>
     <p>{{ $doctorFeedback->occupation }}</p>
 </div>
+<div class="form-group">
+    <b>{!! Form::label('address',  __('Address')) !!}</b>
+    <p>{{ $doctorFeedback->address }}</p>
+</div>
 
 <!-- Overall Result Field -->
 <div class="form-group">
@@ -33,34 +37,54 @@
     <p>{{ $doctorFeedback->status }}</p>
 </div>
 
-<!-- Educational Field -->
 <div class="form-group">
-    <b>{!! Form::label('educational',  __('Educational')) !!}</b>
-    <p>{{ $doctorFeedback->educational }}</p>
+    <b>{!! Form::label('depression',  __('Depression')) !!}</b>
+    <p>{{ $doctorFeedback->depression }}</p>
 </div>
 
-<!-- Family Field -->
 <div class="form-group">
-    <b>{!! Form::label('family',  __('Family')) !!}</b>
-    <p>{{ $doctorFeedback->family }}</p>
+    <b>{!! Form::label('anxiety',  __('Anxiety')) !!}</b>
+    <p>{{ $doctorFeedback->anxiety }}</p>
 </div>
 
-<!-- Relationship Field -->
 <div class="form-group">
-    <b>{!! Form::label('relationship',  __('Relationship')) !!}</b>
-    <p>{{ $doctorFeedback->relationship }}</p>
+    <b>{!! Form::label('irritability',  __('Irritability')) !!}</b>
+    <p>{{ $doctorFeedback->irritability }}</p>
 </div>
 
-<!-- Job Field -->
 <div class="form-group">
-    <b>{!! Form::label('job',  __('Job')) !!}</b>
-    <p>{{ $doctorFeedback->job }}</p>
+    <b>{!! Form::label('emotional',  __('Emotional')) !!}</b>
+    <p>{{ $doctorFeedback->emotional }}</p>
 </div>
 
-<!-- General Field -->
 <div class="form-group">
-    <b>{!! Form::label('general',  __('General')) !!}</b>
-    <p>{{ $doctorFeedback->general }}</p>
+    <b>{!! Form::label('social',  __('Social')) !!}</b>
+    <p>{{ $doctorFeedback->social }}</p>
+</div>
+
+<div class="form-group">
+    <b>{!! Form::label('fatigue',  __('Fatigue')) !!}</b>
+    <p>{{ $doctorFeedback->fatigue }}</p>
+</div>
+
+<div class="form-group">
+    <b>{!! Form::label('concentrating',  __('Concentrating')) !!}</b>
+    <p>{{ $doctorFeedback->concentrating }}</p>
+</div>
+
+<div class="form-group">
+    <b>{!! Form::label('sleep',  __('Sleep')) !!}</b>
+    <p>{{ $doctorFeedback->sleep }}</p>
+</div>
+
+<div class="form-group">
+    <b>{!! Form::label('esteem',  __('Esteem')) !!}</b>
+    <p>{{ $doctorFeedback->esteem }}</p>
+</div>
+
+<div class="form-group">
+    <b>{!! Form::label('panic',  __('Panic')) !!}</b>
+    <p>{{ $doctorFeedback->panic }}</p>
 </div>
 
 <!-- Message Field -->

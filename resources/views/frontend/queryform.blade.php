@@ -1,256 +1,364 @@
 @include('layouts.header')
 
-    <!-- BREADCRUMB AREA START -->
-    <div class="ltn__breadcrumb-area text-left bg-overlay-white-30 bg-image " data-bs-bg="view/img/bg/14.png">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="ltn__breadcrumb-inner">
-                        <h1 class="page-title">Test</h1>
-                        <div class="ltn__breadcrumb-list">
-                            <ul>
-                                <li><a href="{{ route('queryform') }}"><span class="ltn__secondary-color"><i
-                                                class="fas fa-home"></i></span> Home</a></li>
-                                <li>Query Interface</li>
-                            </ul>
-                        </div>
+<!-- BREADCRUMB AREA START -->
+<div class="ltn__breadcrumb-area text-left bg-overlay-white-30 bg-image " data-bs-bg="view/img/bg/14.png">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ltn__breadcrumb-inner">
+                    <h1 class="page-title">Test</h1>
+                    <div class="ltn__breadcrumb-list">
+                        <ul>
+                            <li><a href="{{ route('queryform') }}"><span class="ltn__secondary-color"><i
+                                            class="fas fa-home"></i></span> Home</a></li>
+                            <li>Query Interface</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- BREADCRUMB AREA END -->
+</div>
+<!-- BREADCRUMB AREA END -->
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="ltn__form-box contact-form-box box-shadow white-bg">
-                    <h2 class="title-2">Test Your Mental Health</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ltn__form-box contact-form-box box-shadow white-bg">
+                <h2 class="title-2">Test Your Mental Health</h2>
 
-                    <form id="healthForm" action="{{ route('autoreport.post') }}" method="post">
+                <form id="healthForm" action="{{ route('autoreport.post') }}" method="post">
 
-                        @csrf
+                    @csrf
 
-                        <h2>Questions for Education Issues:</h2>
-                        <div class="mb-3">
-                            <label for="student_q1">Have you been feeling unusually anxious or stressed about schoolwork or exams in the past two weeks?</label>
-                            <br>
-                            <input type="radio" name="student_q1" value="yes" required> Yes
-                            <input type="radio" name="student_q1" value="no" required> No
-                            @error('student_q1')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
+                    {{-- <h2>Depression</h2> --}}
+                    <div class="mb-3">
+                        <label for="depression_q1">1. Do you often feel depressed?</label>
                         <br>
-                        <div class="mb-3">
-                            <label for="student_q2">Have you had trouble concentrating on your studies or completing assignments recently?</label>
-                            <br>
-                            <input type="radio" name="student_q2" value="yes" required> Yes
-                            <input type="radio" name="student_q2" value="no" required> No
-                            @error('student_q2')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
+                        <input type="radio" name="depression_q1" value="yes" required> Yes
+                        <input type="radio" name="depression_q1" value="no" required> No
+                        @error('depression_q1')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="depression_q2">2. Have you lost interest in activities you once enjoyed?</label>
                         <br>
-                        <div class="mb-3">
-                            <label for="student_q3">Have you lost interest in extracurricular activities or hobbies that you usually enjoy?</label>
-                            <br>
-                            <input type="radio" name="student_q3" value="yes" required> Yes
-                            <input type="radio" name="student_q3" value="no" required> No
-                            @error('student_q3')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
+                        <input type="radio" name="depression_q2" value="yes" required> Yes
+                        <input type="radio" name="depression_q2" value="no" required> No
+                        @error('depression_q2')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="depression_q3">3. Do you feel tired or have little energy most days?</label>
                         <br>
-                        <div class="mb-3">
-                            <label for="student_q4">Have you been avoiding friends or social activities at university more than usual?</label>
-                            <br>
-                            <input type="radio" name="student_q4" value="yes" required> Yes
-                            <input type="radio" name="student_q4" value="no" required> No
-                            @error('student_q4')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
-                        <br>
-                        <div class="mb-3">
-                            <label for="student_q5">Have you felt overwhelmed by the academic workload or the pressure to perform well in university?</label>
-                            <br>
-                            <input type="radio" name="student_q5" value="yes" required> Yes
-                            <input type="radio" name="student_q5" value="no" required> No
-                            @error('student_q5')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
-                        <br>
+                        <input type="radio" name="depression_q3" value="yes" required> Yes
+                        <input type="radio" name="depression_q3" value="no" required> No
+                        @error('depression_q3')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
 
-                        <h2>Questions for Family Issues:</h2>
-                        <div class="mb-3">
-                            <label for="family_q1">Have you experienced frequent conflicts or arguments with family members recently?</label>
-                            <br>
-                            <input type="radio" name="family_q1" value="yes" required> Yes
-                            <input type="radio" name="family_q1" value="no" required> No
-                            @error('family_q1')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
+                    {{-- <h2>Anxiety</h2> --}}
+                    <div class="mb-3">
+                        <label for="anxiety_q1">4. Do you feel nervous or anxious often?</label>
                         <br>
-                        <div class="mb-3">
-                            <label for="family_q2">Do you feel unsupported or misunderstood by your family?</label>
-                            <br>
-                            <input type="radio" name="family_q2" value="yes" required> Yes
-                            <input type="radio" name="family_q2" value="no" required> No
-                            @error('family_q2')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
+                        <input type="radio" name="anxiety_q1" value="yes" required> Yes
+                        <input type="radio" name="anxiety_q1" value="no" required> No
+                        @error('anxiety_q1')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="anxiety_q2">5. Do you worry excessively about different aspects of your
+                            life?</label>
                         <br>
-                        <div class="mb-3">
-                            <label for="family_q3">Have you been avoiding spending time at home or with family members more than usual?</label>
-                            <br>
-                            <input type="radio" name="family_q3" value="yes" required> Yes
-                            <input type="radio" name="family_q3" value="no" required> No
-                            @error('family_q3')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
+                        <input type="radio" name="anxiety_q2" value="yes" required> Yes
+                        <input type="radio" name="anxiety_q2" value="no" required> No
+                        @error('anxiety_q2')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="anxiety_q3">6. Do you have trouble relaxing?</label>
                         <br>
-                        <div class="mb-3">
-                            <label for="family_q4">Have family responsibilities been causing you significant stress or anxiety?</label>
-                            <br>
-                            <input type="radio" name="family_q4" value="yes" required> Yes
-                            <input type="radio" name="family_q4" value="no" required> No
-                            @error('family_q4')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
-                        <br>
-                        <div class="mb-3">
-                            <label for="family_q5">Have you felt unsafe or uncomfortable in your home environment recently?</label>
-                            <br>
-                            <input type="radio" name="family_q5" value="yes" required> Yes
-                            <input type="radio" name="family_q5" value="no" required> No
-                            @error('family_q5')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
-                        <br>
+                        <input type="radio" name="anxiety_q3" value="yes" required> Yes
+                        <input type="radio" name="anxiety_q3" value="no" required> No
+                        @error('anxiety_q3')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
 
-                        <h2>Questions for Relationship Issues:</h2>
-                        <div class="mb-3">
-                            <label for="relationship_q1">Have you been feeling disconnected or distant from your partner recently?</label>
-                            <br>
-                            <input type="radio" name="relationship_q1" value="yes" required> Yes
-                            <input type="radio" name="relationship_q1" value="no" required> No
-                            @error('relationship_q1')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
+                    {{-- <h2>Irritability</h2> --}}
+                    <div class="mb-3">
+                        <label for="irritability_q1">7. Do you feel easily irritated or angry?</label>
                         <br>
-                        <div class="mb-3">
-                            <label for="relationship_q2">Have you and your partner been having frequent arguments or disagreements?</label>
-                            <br>
-                            <input type="radio" name="relationship_q2" value="yes" required> Yes
-                            <input type="radio" name="relationship_q2" value="no" required> No
-                            @error('relationship_q2')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
+                        <input type="radio" name="irritability_q1" value="yes" required> Yes
+                        <input type="radio" name="irritability_q1" value="no" required> No
+                        @error('irritability_q1')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="irritability_q2">8. Do you have frequent arguments with others?</label>
                         <br>
-                        <div class="mb-3">
-                            <label for="relationship_q3">Do you feel unsupported or unappreciated in your relationship?</label>
-                            <br>
-                            <input type="radio" name="relationship_q3" value="yes" required> Yes
-                            <input type="radio" name="relationship_q3" value="no" required> No
-                            @error('relationship_q3')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
+                        <input type="radio" name="irritability_q2" value="yes" required> Yes
+                        <input type="radio" name="irritability_q2" value="no" required> No
+                        @error('irritability_q2')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="irritability_q3">9. Do you get annoyed by small inconveniences?</label>
                         <br>
-                        <div class="mb-3">
-                            <label for="relationship_q4">Have you been avoiding spending time with your partner or communicating with them?</label>
-                            <br>
-                            <input type="radio" name="relationship_q4" value="yes" required> Yes
-                            <input type="radio" name="relationship_q4" value="no" required> No
-                            @error('relationship_q4')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
-                        <br>
-                        <div class="mb-3">
-                            <label for="relationship_q5">Have you been questioning whether you want to continue your relationship?</label>
-                            <br>
-                            <input type="radio" name="relationship_q5" value="yes" required> Yes
-                            <input type="radio" name="relationship_q5" value="no" required> No
-                            @error('relationship_q5')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
-                        <br>
+                        <input type="radio" name="irritability_q3" value="yes" required> Yes
+                        <input type="radio" name="irritability_q3" value="no" required> No
+                        @error('irritability_q3')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
 
-                        <h2>Questions for Job Issues:</h2>
-                        <div class="mb-3">
-                            <label for="job_q1">Have you been feeling unusually stressed or anxious about your job in the past two weeks?</label>
-                            <br>
-                            <input type="radio" name="job_q1" value="yes" required> Yes
-                            <input type="radio" name="job_q1" value="no" required> No
-                            @error('job_q1')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
+                    {{-- <h2>Emotional Dysregulation</h2> --}}
+                    <div class="mb-3">
+                        <label for="emotional_q1">10. Do you find it hard to control your emotions?</label>
                         <br>
-                        <div class="mb-3">
-                            <label for="job_q2">Have you had trouble concentrating or staying productive at work recently?</label>
-                            <br>
-                            <input type="radio" name="job_q2" value="yes" required> Yes
-                            <input type="radio" name="job_q2" value="no" required> No
-                            @error('job_q2')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
+                        <input type="radio" name="emotional_q1" value="yes" required> Yes
+                        <input type="radio" name="emotional_q1" value="no" required> No
+                        @error('emotional_q1')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="emotional_q2">11. Do you often feel overwhelmed by your feelings?</label>
                         <br>
-                        <div class="mb-3">
-                            <label for="job_q3">Have you been feeling unappreciated or undervalued at your job?</label>
-                            <br>
-                            <input type="radio" name="job_q3" value="yes" required> Yes
-                            <input type="radio" name="job_q3" value="no" required> No
-                            @error('job_q3')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
+                        <input type="radio" name="emotional_q2" value="yes" required> Yes
+                        <input type="radio" name="emotional_q2" value="no" required> No
+                        @error('emotional_q2')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="emotional_q3">12. Do you have difficulty calming down when you are upset?</label>
                         <br>
-                        <div class="mb-3">
-                            <label for="job_q4">Have you been avoiding work-related tasks or responsibilities more than usual?</label>
-                            <br>
-                            <input type="radio" name="job_q4" value="yes" required> Yes
-                            <input type="radio" name="job_q4" value="no" required> No
-                            @error('job_q4')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
-                        <br>
-                        <div class="mb-3">
-                            <label for="job_q5">Have you been feeling overwhelmed by job demands or expectations?</label>
-                            <br>
-                            <input type="radio" name="job_q5" value="yes" required> Yes
-                            <input type="radio" name="job_q5" value="no" required> No
-                            @error('job_q5')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
-                        <br>
+                        <input type="radio" name="emotional_q3" value="yes" required> Yes
+                        <input type="radio" name="emotional_q3" value="no" required> No
+                        @error('emotional_q3')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
 
+                    {{-- <h2>Social Withdrawal</h2> --}}
+                    <div class="mb-3">
+                        <label for="social_q1">13. Have you been avoiding social interactions recently?</label>
+                        <br>
+                        <input type="radio" name="social_q1" value="yes" required> Yes
+                        <input type="radio" name="social_q1" value="no" required> No
+                        @error('social_q1')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="social_q2">14. Do you prefer spending time alone rather than with friends?</label>
+                        <br>
+                        <input type="radio" name="social_q2" value="yes" required> Yes
+                        <input type="radio" name="social_q2" value="no" required> No
+                        @error('social_q2')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="social_q3">15. Do you feel disconnected from others?</label>
+                        <br>
+                        <input type="radio" name="social_q3" value="yes" required> Yes
+                        <input type="radio" name="social_q3" value="no" required> No
+                        @error('social_q3')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
 
-                        <h2>Questions for Mental Health:</h2>
-                        <div class="mb-3">
-                            <label for="mental_health_q1">Have you been feeling sad or hopeless more than usual in the past two weeks?</label>
-                            <br>
-                            <input type="radio" name="mental_health_q1" value="yes" required> Yes
-                            <input type="radio" name="mental_health_q1" value="no" required> No
-                            @error('mental_health_q1')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
+                    {{-- <h2>Fatigue</h2> --}}
+                    <div class="mb-3">
+                        <label for="fatigue_q1">16. Do you feel fatigued even after a good night's sleep?</label>
                         <br>
-                        <div class="mb-3">
-                            <label for="mental_health_q2">Have you noticed changes in your sleep patterns (e.g., trouble sleeping, oversleeping)?</label>
-                            <br>
-                            <input type="radio" name="mental_health_q2" value="yes" required> Yes
-                            <input type="radio" name="mental_health_q2" value="no" required> No
-                            @error('mental_health_q2')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
+                        <input type="radio" name="fatigue_q1" value="yes" required> Yes
+                        <input type="radio" name="fatigue_q1" value="no" required> No
+                        @error('fatigue_q1')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="fatigue_q2">17. Is it challenging for you to complete daily tasks due to lack of energy?</label>
                         <br>
-                        <div class="mb-3">
-                            <label for="mental_health_q3">Have you experienced a lack of energy or motivation to do things you usually enjoy?</label>
-                            <br>
-                            <input type="radio" name="mental_health_q3" value="yes" required> Yes
-                            <input type="radio" name="mental_health_q3" value="no" required> No
-                            @error('mental_health_q3')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
+                        <input type="radio" name="fatigue_q2" value="yes" required> Yes
+                        <input type="radio" name="fatigue_q2" value="no" required> No
+                        @error('fatigue_q2')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="fatigue_q3">18. Do you often feel drained or exhausted?</label>
                         <br>
-                        <div class="mb-3">
-                            <label for="mental_health_q4">Have you had thoughts of self-harm or suicide?</label>
-                            <br>
-                            <input type="radio" name="mental_health_q4" value="yes" required> Yes
-                            <input type="radio" name="mental_health_q4" value="no" required> No
-                            @error('mental_health_q4')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
-                        <br>
-                        <div class="mb-3">
-                            <label for="mental_health_q5">Do you feel overwhelmed by your emotions or find it hard to cope with stress?</label>
-                            <br>
-                            <input type="radio" name="mental_health_q5" value="yes" required> Yes
-                            <input type="radio" name="mental_health_q5" value="no" required> No
-                            @error('mental_health_q5')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
-                        <br>
+                        <input type="radio" name="fatigue_q3" value="yes" required> Yes
+                        <input type="radio" name="fatigue_q3" value="no" required> No
+                        @error('fatigue_q3')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
 
+                    {{-- <h2>Difficulty Concentrating</h2> --}}
+                    <div class="mb-3">
+                        <label for="concentrating_q1">19. Do you often find it hard to focus on tasks?</label>
+                        <br>
+                        <input type="radio" name="concentrating_q1" value="yes" required> Yes
+                        <input type="radio" name="concentrating_q1" value="no" required> No
+                        @error('concentrating_q1')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="concentrating_q2">20. Do you struggle to remember things from day to day?</label>
+                        <br>
+                        <input type="radio" name="concentrating_q2" value="yes" required> Yes
+                        <input type="radio" name="concentrating_q2" value="no" required> No
+                        @error('concentrating_q2')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="concentrating_q3">21. Are you easily distracted when working on something important?</label>
+                        <br>
+                        <input type="radio" name="concentrating_q3" value="yes" required> Yes
+                        <input type="radio" name="concentrating_q3" value="no" required> No
+                        @error('concentrating_q3')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
 
+                    {{-- <h2>Sleep Disturbances</h2> --}}
+                    <div class="mb-3">
+                        <label for="sleep_q1">22. Do you have trouble falling asleep at night?</label>
+                        <br>
+                        <input type="radio" name="sleep_q1" value="yes" required> Yes
+                        <input type="radio" name="sleep_q1" value="no" required> No
+                        @error('sleep_q1')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="sleep_q2">23. Do you frequently wake up during the night?</label>
+                        <br>
+                        <input type="radio" name="sleep_q2" value="yes" required> Yes
+                        <input type="radio" name="sleep_q2" value="no" required> No
+                        @error('sleep_q2')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="sleep_q3">24. Do you feel unrefreshed after a full night's sleep?</label>
+                        <br>
+                        <input type="radio" name="sleep_q3" value="yes" required> Yes
+                        <input type="radio" name="sleep_q3" value="no" required> No
+                        @error('sleep_q3')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
 
-                        <button type="submit" class="theme-btn-1 btn btn-effect-1 text-uppercase">Submit</button>
-                    </form>
-                </div>
+                    {{-- <h2>Low Self-Esteem</h2> --}}
+                    <div class="mb-3">
+                        <label for="esteem_q1">25. Do you often feel that you are not as good as others?</label>
+                        <br>
+                        <input type="radio" name="esteem_q1" value="yes" required> Yes
+                        <input type="radio" name="esteem_q1" value="no" required> No
+                        @error('esteem_q1')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="esteem_q2">26. Do you criticize yourself frequently?</label>
+                        <br>
+                        <input type="radio" name="esteem_q2" value="yes" required> Yes
+                        <input type="radio" name="esteem_q2" value="no" required> No
+                        @error('esteem_q2')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="esteem_q3">27. Do you feel uncomfortable expressing your opinions?</label>
+                        <br>
+                        <input type="radio" name="esteem_q3" value="yes" required> Yes
+                        <input type="radio" name="esteem_q3" value="no" required> No
+                        @error('esteem_q3')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+
+                    {{-- <h2>Panic Attacks</h2> --}}
+                    <div class="mb-3">
+                        <label for="panic_q1">28. Have you experienced sudden feelings of intense fear?</label>
+                        <br>
+                        <input type="radio" name="panic_q1" value="yes" required> Yes
+                        <input type="radio" name="panic_q1" value="no" required> No
+                        @error('panic_q1')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="panic_q2">29. Do you experience physical symptoms like rapid heart rate during moments of panic?</label>
+                        <br>
+                        <input type="radio" name="panic_q2" value="yes" required> Yes
+                        <input type="radio" name="panic_q2" value="no" required> No
+                        @error('panic_q2')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+                    <div class="mb-3">
+                        <label for="panic_q3">30. Do you worry about having another panic attack?</label>
+                        <br>
+                        <input type="radio" name="panic_q3" value="yes" required> Yes
+                        <input type="radio" name="panic_q3" value="no" required> No
+                        @error('panic_q3')
+                            <span class="text-danger">{{ $message }}</span>
+                        @enderror
+                    </div>
+                    <br>
+
+                    <button type="submit" class="theme-btn-1 btn btn-effect-1 text-uppercase">Submit</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
-    <br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
 
-    @include('layouts.footer')
+@include('layouts.footer')

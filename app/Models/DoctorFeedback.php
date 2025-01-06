@@ -17,13 +17,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property integer $age
  * @property string $gender
  * @property string $occupation
+ * @property string $address
  * @property integer $overall_result
  * @property integer $status
- * @property integer $educational
- * @property integer $family
- * @property integer $relationship
- * @property integer $job
- * @property integer $general
+ * @property integer $depression
+ * @property integer $anxiety
+ * @property integer $irritability
+ * @property integer $emotional
+ * @property integer $social
+ * @property integer $fatigue
+ * @property integer $concentrating
+ * @property integer $sleep
+ * @property integer $esteem
+ * @property integer $panic
  * @property string $message
  * @property string $symptoms
  * @property string $suggestions
@@ -41,13 +47,19 @@ class DoctorFeedback extends Model
         'age',               // New field
         'gender',            // New field
         'occupation',        // New field
+        'address',        // New field
         'overall_result',    // New field
         'status',
-        'educational',       // New field
-        'family',            // New field
-        'relationship',      // New field
-        'job',               // New field
-        'general',           // New field
+        'depression',       // New field
+        'anxiety',            // New field
+        'irritability',      // New field
+        'emotional',               // New field
+        'social',               // New field
+        'fatigue',               // New field
+        'concentrating',               // New field
+        'sleep',               // New field
+        'esteem',               // New field
+        'panic',               // New field
         'message',           // New field (nullable)
         'symptoms',
         'suggestions',
@@ -66,13 +78,19 @@ class DoctorFeedback extends Model
         'age' => 'integer',           // New cast
         'gender' => 'string',         // New cast
         'occupation' => 'string',     // New cast
+        'address' => 'string',     // New cast
         'overall_result' => 'integer',// New cast
         'status'=>'string',
-        'educational' => 'integer',   // New cast
-        'family' => 'integer',        // New cast
-        'relationship' => 'integer',  // New cast
-        'job' => 'integer',           // New cast
-        'general' => 'integer',       // New cast
+        'depression' => 'integer',   // New cast
+        'anxiety' => 'integer',        // New cast
+        'irritability' => 'integer',  // New cast
+        'emotional' => 'integer',           // New cast
+        'social' => 'integer',       // New cast
+        'fatigue' => 'integer',       // New cast
+        'concentrating' => 'integer',       // New cast
+        'sleep' => 'integer',       // New cast
+        'esteem' => 'integer',       // New cast
+        'panic' => 'integer',       // New cast
         'message' => 'string',        // New cast (nullable)
         'symptoms' => 'string',
         'suggestions' => 'string',
@@ -90,13 +108,19 @@ class DoctorFeedback extends Model
         'age' => 'integer',                 // New rule
         'gender' => 'string|max:20',        // New rule
         'occupation' => 'string|max:255',   // New rule
+        'address' => 'string|max:255',   // New rule
         'overall_result' => 'integer',      // New rule
         'status'=>'string',
-        'educational' => 'integer',         // New rule
-        'family' => 'integer',              // New rule
-        'relationship' => 'integer',        // New rule
-        'job' => 'integer',                 // New rule
-        'general' => 'integer',             // New rule
+        'depression' => 'integer',         // New rule
+        'anxiety' => 'integer',              // New rule
+        'irritability' => 'integer',        // New rule
+        'emotional' => 'integer',                 // New rule
+        'social' => 'integer',             // New rule
+        'fatigue' => 'integer',             // New rule
+        'concentrating' => 'integer',             // New rule
+        'sleep' => 'integer',             // New rule
+        'esteem' => 'integer',             // New rule
+        'panic' => 'integer',             // New rule
         'message' => 'nullable|string',              // New rule
         'symptoms' => 'nullable|string',
         'suggestions' => 'nullable|string',

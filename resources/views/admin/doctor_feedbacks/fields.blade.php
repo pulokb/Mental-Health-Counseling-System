@@ -29,6 +29,11 @@
     {!! Form::text('occupation', null, ['class' => 'form-control', 'placeholder' => 'Enter Occupation', 'disabled']) !!}
 </div>
 
+<div class="form-group">
+    {!! Form::label('address', __('Address')) !!}
+    {!! Form::text('address', null, ['class' => 'form-control', 'placeholder' => 'Enter Address', 'disabled']) !!}
+</div>
+
 <!-- Overall Result Field (Disabled) -->
 <div class="form-group">
     {!! Form::label('overall_result', __('Overall Result')) !!}
@@ -40,34 +45,59 @@
     {!! Form::text('status', null, ['class' => 'form-control', 'placeholder' => 'Enter Overall Result', 'disabled']) !!}
 </div>
 
-<!-- Educational Field (Disabled) -->
+
 <div class="form-group">
-    {!! Form::label('educational', __('Educational')) !!}
-    {!! Form::textarea('educational', null, ['class' => 'form-control', 'placeholder' => 'Educational Details', 'disabled']) !!}
+    {!! Form::label('depression', __('Depression')) !!}
+    {!! Form::textarea('depression', null, ['class' => 'form-control', 'placeholder' => ' Details', 'disabled']) !!}
 </div>
 
-<!-- Family Field (Disabled) -->
+
 <div class="form-group">
-    {!! Form::label('family', __('Family')) !!}
-    {!! Form::textarea('family', null, ['class' => 'form-control', 'placeholder' => 'Family Details', 'disabled']) !!}
+    {!! Form::label('anxiety', __('Anxiety')) !!}
+    {!! Form::textarea('anxiety', null, ['class' => 'form-control', 'placeholder' => ' Details', 'disabled']) !!}
 </div>
 
-<!-- Relationship Field (Disabled) -->
+
 <div class="form-group">
-    {!! Form::label('relationship', __('Relationship')) !!}
-    {!! Form::textarea('relationship', null, ['class' => 'form-control', 'placeholder' => 'Relationship Details', 'disabled']) !!}
+    {!! Form::label('irritability', __('Irritability')) !!}
+    {!! Form::textarea('irritability', null, ['class' => 'form-control', 'placeholder' => ' Details', 'disabled']) !!}
 </div>
 
-<!-- Job Field (Disabled) -->
+
 <div class="form-group">
-    {!! Form::label('job', __('Job')) !!}
-    {!! Form::textarea('job', null, ['class' => 'form-control', 'placeholder' => 'Job Details', 'disabled']) !!}
+    {!! Form::label('emotional', __('Emotional')) !!}
+    {!! Form::textarea('emotional', null, ['class' => 'form-control', 'placeholder' => ' Details', 'disabled']) !!}
 </div>
 
-<!-- General Field (Disabled) -->
+
 <div class="form-group">
-    {!! Form::label('general', __('General')) !!}
-    {!! Form::textarea('general', null, ['class' => 'form-control', 'placeholder' => 'General Information', 'disabled']) !!}
+    {!! Form::label('social', __('Social')) !!}
+    {!! Form::textarea('social', null, ['class' => 'form-control', 'placeholder' => ' Information', 'disabled']) !!}
+</div>
+
+<div class="form-group">
+    {!! Form::label('fatigue', __('Fatigue')) !!}
+    {!! Form::textarea('fatigue', null, ['class' => 'form-control', 'placeholder' => ' Information', 'disabled']) !!}
+</div>
+
+<div class="form-group">
+    {!! Form::label('concentrating', __('Concentrating')) !!}
+    {!! Form::textarea('concentrating', null, ['class' => 'form-control', 'placeholder' => ' Information', 'disabled']) !!}
+</div>
+
+<div class="form-group">
+    {!! Form::label('sleep', __('Sleep')) !!}
+    {!! Form::textarea('sleep', null, ['class' => 'form-control', 'placeholder' => ' Information', 'disabled']) !!}
+</div>
+
+<div class="form-group">
+    {!! Form::label('esteem', __('Esteem')) !!}
+    {!! Form::textarea('esteem', null, ['class' => 'form-control', 'placeholder' => ' Information', 'disabled']) !!}
+</div>
+
+<div class="form-group">
+    {!! Form::label('panic', __('Panic')) !!}
+    {!! Form::textarea('panic', null, ['class' => 'form-control', 'placeholder' => ' Information', 'disabled']) !!}
 </div>
 
 <!-- Message Field (Disabled) -->

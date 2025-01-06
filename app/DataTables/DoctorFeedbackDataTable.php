@@ -54,13 +54,19 @@ class DoctorFeedbackDataTable extends DataTable
             'age',               // New field
             'gender',            // New field
             'occupation',        // New field
+            'address',        // New field
             'overall_result',    // New field
             'status',
-            'educational',       // New field
-            'family',            // New field
-            'relationship',      // New field
-            'job',               // New field
-            'general',           // New field
+            'depression',       // New field
+            'anxiety',            // New field
+            'irritability',      // New field
+            'emotional',               // New field
+            'social',           // New field
+            'fatigue',           // New field
+            'concentrating',           // New field
+            'sleep',           // New field
+            'esteem',           // New field
+            'panic',           // New field
             'message',           // New field (nullable)
             'symptoms',
             'suggestions',

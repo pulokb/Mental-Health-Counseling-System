@@ -23,13 +23,19 @@ class CreateDoctorFeedbacksTable extends Migration
             $table->integer('age');        // Add age field
             $table->string('gender');      // Add gender field
             $table->string('occupation');  // Add occupation field
+            $table->string('address');  // Add occupation field
             $table->integer('overall_result');  // Add overall_result field
             $table->string('status');
-            $table->integer('educational');     // Add educational field
-            $table->integer('family');          // Add family field
-            $table->integer('relationship');    // Add relationship field
-            $table->integer('job');             // Add job field
-            $table->integer('general');         // Add general field
+            $table->integer('depression');     // Add educational field
+            $table->integer('anxiety');          // Add family field
+            $table->integer('irritability');    // Add relationship field
+            $table->integer('emotional');             // Add job field
+            $table->integer('social');         // Add general field
+            $table->integer('fatigue');         // Add general field
+            $table->integer('concentrating');         // Add general field
+            $table->integer('sleep');         // Add general field
+            $table->integer('esteem');         // Add general field
+            $table->integer('panic');         // Add general field
             $table->text('message')->nullable(); // Add message field (nullable)
             $table->text('symptoms')->nullable();
             $table->text('suggestions')->nullable();
