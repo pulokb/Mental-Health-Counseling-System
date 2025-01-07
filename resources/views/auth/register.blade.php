@@ -66,7 +66,16 @@
                         <div class="form-group row">
                             <label for="phone" class="col-md-4 col-form-label text-md-right font-weight-bold">{{ __('Phone Number') }}</label>
                             <div class="col-md-8">
-                                <input id="phone" type="tel" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+                                <input id="phone"
+                                       type="tel"
+                                       class="form-control @error('phone') is-invalid @enderror"
+                                       name="phone"
+                                       value="{{ old('phone') }}"
+                                       required
+                                       pattern="\d{11}"
+                                       maxlength="11"
+                                       minlength="11"
+                                       title="Please enter an 11-digit phone number">
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -92,9 +101,9 @@
 
                         <!-- Age -->
                         <div class="form-group row">
-                            <label for="age" class="col-md-4 col-form-label text-md-right font-weight-bold">{{ __('Age') }}</label>
+                            <label for="age" class="col-md-4 col-form-label text-md-right font-weight-bold">{{ __('Date of Birth') }}</label>
                             <div class="col-md-8">
-                                <input id="age" type="number" class="form-control @error('age') is-invalid @enderror" name="age" value="{{ old('age') }}" required autocomplete="age">
+                                <input id="age" type="date" class="form-control @error('age') is-invalid @enderror" name="age" value="{{ old('age') }}" required>
                                 @error('age')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

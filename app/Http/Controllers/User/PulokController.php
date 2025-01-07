@@ -12,16 +12,42 @@ use Illuminate\Support\Facades\Auth;
 
 class PulokController extends Controller
 {
-    public function autoreport(Request $request) {
+    public function autoreport(Request $request)
+    {
         $user = auth()->user();
 
         // Define the fields we will be processing
         $fields = [
-            'depression_q1','depression_q2','depression_q3','anxiety_q1','anxiety_q2','anxiety_q3',
-            'irritability_q1','irritability_q2','irritability_q3','emotional_q1','emotional_q2',
-            'emotional_q3','social_q1','social_q2','social_q3','fatigue_q1','fatigue_q2',
-            'fatigue_q3','concentrating_q1','concentrating_q2','concentrating_q3',
-            'sleep_q1','sleep_q2','sleep_q3','esteem_q1','esteem_q2','esteem_q3','panic_q1','panic_q2','panic_q3',
+            'depression_q1',
+            'depression_q2',
+            'depression_q3',
+            'anxiety_q1',
+            'anxiety_q2',
+            'anxiety_q3',
+            'irritability_q1',
+            'irritability_q2',
+            'irritability_q3',
+            'emotional_q1',
+            'emotional_q2',
+            'emotional_q3',
+            'social_q1',
+            'social_q2',
+            'social_q3',
+            'fatigue_q1',
+            'fatigue_q2',
+            'fatigue_q3',
+            'concentrating_q1',
+            'concentrating_q2',
+            'concentrating_q3',
+            'sleep_q1',
+            'sleep_q2',
+            'sleep_q3',
+            'esteem_q1',
+            'esteem_q2',
+            'esteem_q3',
+            'panic_q1',
+            'panic_q2',
+            'panic_q3',
         ];
 
         // Validate the incoming request data
@@ -58,47 +84,47 @@ class PulokController extends Controller
         // Assuming each category has specific questions (adjust as needed)
         foreach ($fields as $field) {
             if (strpos($field, 'depression') !== false && $request->$field == 'yes') {
-                $depressionScore += 33; // Assuming each 'yes' answer contributes 33 points
+                $depressionScore += 25; // Assuming each 'yes' answer contributes 25 points
             }
             if (strpos($field, 'anxiety') !== false && $request->$field == 'yes') {
-                $anxietyScore += 33;
+                $anxietyScore += 25;
             }
             if (strpos($field, 'irritability') !== false && $request->$field == 'yes') {
-                $irritabilityScore += 33;
+                $irritabilityScore += 25;
             }
             if (strpos($field, 'emotional') !== false && $request->$field == 'yes') {
-                $emotionalScore += 33;
+                $emotionalScore += 25;
             }
             if (strpos($field, 'social') !== false && $request->$field == 'yes') {
-                $socialScore += 33;
+                $socialScore += 25;
             }
             if (strpos($field, 'fatigue') !== false && $request->$field == 'yes') {
-                $fatigueScore += 33;
+                $fatigueScore += 25;
             }
             if (strpos($field, 'concentrating') !== false && $request->$field == 'yes') {
-                $concentratingScore += 33;
+                $concentratingScore += 25;
             }
             if (strpos($field, 'sleep') !== false && $request->$field == 'yes') {
-                $sleepScore += 33;
+                $sleepScore += 25;
             }
             if (strpos($field, 'esteem') !== false && $request->$field == 'yes') {
-                $esteemScore += 33;
+                $esteemScore += 25;
             }
             if (strpos($field, 'panic') !== false && $request->$field == 'yes') {
-                $panicScore += 33;
+                $panicScore += 25;
             }
         }
 
         // Calculate total score (adjust based on your needs)
         $totalScore = ($depressionScore + $anxietyScore + $irritabilityScore + $emotionalScore + $socialScore + $fatigueScore + $concentratingScore + $sleepScore + $esteemScore + $panicScore);
 
-        // Determine the totalScore  message based on total score
+        // Determine the totalScore message based on total score
         $status = '';
-        if ($totalScore<= 330) {
+        if ($totalScore <= 325) {
             $status = 'Good';
-        } elseif ($totalScore> 330 && $totalScore<= 660) {
+        } elseif ($totalScore > 325 && $totalScore <= 450) {
             $status = 'Moderate';
-        } elseif ($totalScore> 660) {
+        } elseif ($totalScore > 450) {
             $status = 'Weak';
         }
 
@@ -107,51 +133,60 @@ class PulokController extends Controller
 
 
 
-    public function queryform() {
+
+
+    public function queryform()
+    {
         return view("frontend.queryform");
     }
 
 
     public function response()
-{
-    // Get the currently authenticated user
-    $user = auth()->user();
+    {
+        // Get the currently authenticated user
+        $user = auth()->user();
 
-    // Fetch feedbacks that belong to the logged-in user
-    $feedbacks = DoctorFeedback::where('user_id', auth()->id())->orderBy('created_at', 'desc')->get();
+        // Fetch feedbacks that belong to the logged-in user
+        $feedbacks = DoctorFeedback::where('user_id', auth()->id())->orderBy('created_at', 'desc')->get();
 
-    // Return the view with the filtered feedback data
-    return view('frontend.response', compact('feedbacks'));
-}
+        // Return the view with the filtered feedback data
+        return view('frontend.response', compact('feedbacks'));
+    }
 
 
-    public function symptoms(Request $request) {
+    public function symptoms(Request $request)
+    {
         $symptoms = Symptoms::all(); // Consider pagination if the list grows
         return view('frontend.symptoms', compact('symptoms'));
     }
 
-    public function symptomsDetails($id) {
+    public function symptomsDetails($id)
+    {
         $symptom = Symptoms::findOrFail($id);
         $latestSymptoms = Symptoms::orderBy('created_at', 'desc')->take(3)->get();
         return view('frontend.symptom-details', compact('symptom', 'latestSymptoms'));
     }
 
-    public function suggestions(Request $request) {
+    public function suggestions(Request $request)
+    {
         $suggestions = Suggestions::all(); // Consider pagination if necessary
         return view('frontend.suggestions', compact('suggestions'));
     }
 
-    public function suggestionDetails($id) {
+    public function suggestionDetails($id)
+    {
         $suggestion = Suggestions::findOrFail($id);
         $latestSuggestions = Suggestions::orderBy('created_at', 'desc')->take(3)->get();
         return view('frontend.suggestion-details', compact('suggestion', 'latestSuggestions'));
     }
 
-    public function faq() {
+    public function faq()
+    {
         return view("frontend.faq");
     }
 
-    public function show(Symptoms $symptom) {
+    public function show(Symptoms $symptom)
+    {
         return view('user.blog_show', compact('symptom'));
     }
 }

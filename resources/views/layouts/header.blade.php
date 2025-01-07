@@ -114,7 +114,7 @@
                                            Hello {{ Auth::user()->name }}
                                         </a>
                                         <ul>
-                                            <li><a href="{{ route('response.get') }}">{{ __('My Feedback') }}</a></li>
+                                            <li><a href="{{ route('response.get') }}">{{ __('My Report') }}</a></li>
 
                                             <li>
                                                 <a href="{{ route('logout') }}"
@@ -187,7 +187,7 @@
                            Hello {{ Auth::user()->name }}
                         </a>
                         <ul>
-                            <li><a href="{{ route('response.get') }}">{{ __('My Feedback') }}</a></li>
+                            <li><a href="{{ route('response.get') }}">{{ __('My Report') }}</a></li>
 
                             <li>
 

@@ -23,26 +23,43 @@ class ProfileController extends Controller
      * Handle Profile Change
      */
     public function profileChange(Request $request)
-    {
-        $user = Auth::user();
+{
+    $user = Auth::user();
 
-        // Handle image upload
-        $imageName = FileHelper::uploadImage($request, $user);
+    // Validate inputs (you can add any other validation as needed)
+    $request->validate([
+        'name' => 'required|max:191',
+        'phone' => 'nullable|max:15',
+        'address' => 'nullable|max:191',
+        'age' => 'nullable|integer|min:1',
+        'gender' => 'nullable|in:Male,Female,Other',
+        'occupation' => 'nullable|max:191',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
 
-        // Debugging statement: Check if image upload was successful
-        \Log::info('Profile updated: Image Name - ' . $imageName);
+    // Handle image upload
+    $imageName = FileHelper::uploadImage($request, $user);
 
-        // Update user data
-        $user->fill([
-            'name' => $request->input('name'),
-            'image' => $imageName ? $imageName : $user->image, // Keep existing image if no new one is uploaded
-        ])->save();
+    // Debugging statement: Check if image upload was successful
+    \Log::info('Profile updated: Image Name - ' . $imageName);
 
-        // Debugging statement: Check user update status
-        \Log::info('Profile update complete for user: ' . $user->id);
+    // Update user data, excluding the email field
+    $user->fill([
+        'name' => $request->input('name'),
+        'phone' => $request->input('phone'),
+        'address' => $request->input('address'),
+        'age' => $request->input('age'),
+        'gender' => $request->input('gender'),
+        'occupation' => $request->input('occupation'),
+        'image' => $imageName ? $imageName : $user->image, // Keep existing image if no new one is uploaded
+    ])->save();
 
-        return back()->with('success', 'Profile updated successfully.');
-    }
+    // Debugging statement: Check user update status
+    \Log::info('Profile update complete for user: ' . $user->id);
+
+    return back()->with('success', 'Profile updated successfully.');
+}
+
 
     /**
      * Handle Password Change

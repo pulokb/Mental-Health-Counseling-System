@@ -30,7 +30,7 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('address', __('Address')) !!}
+    {!! Form::label('address', __('Location')) !!}
     {!! Form::text('address', null, ['class' => 'form-control', 'placeholder' => 'Enter Address', 'disabled']) !!}
 </div>
 
@@ -47,56 +47,56 @@
 
 
 <div class="form-group">
-    {!! Form::label('depression', __('Depression')) !!}
+    {!! Form::label('depression', __('1. Depression (Feelings of persistent sadness and lack of interest in daily activities)')) !!}
     {!! Form::textarea('depression', null, ['class' => 'form-control', 'placeholder' => ' Details', 'disabled']) !!}
 </div>
 
 
 <div class="form-group">
-    {!! Form::label('anxiety', __('Anxiety')) !!}
+    {!! Form::label('anxiety', __('2. Anxiety (Excessive worry, fear, and tension that interferes with daily functioning)')) !!}
     {!! Form::textarea('anxiety', null, ['class' => 'form-control', 'placeholder' => ' Details', 'disabled']) !!}
 </div>
 
 
 <div class="form-group">
-    {!! Form::label('irritability', __('Irritability')) !!}
+    {!! Form::label('irritability', __('3. Irritability (Being easily frustrated or angered, often leading to conflict in relationships)')) !!}
     {!! Form::textarea('irritability', null, ['class' => 'form-control', 'placeholder' => ' Details', 'disabled']) !!}
 </div>
 
 
 <div class="form-group">
-    {!! Form::label('emotional', __('Emotional')) !!}
+    {!! Form::label('emotional', __('4. Emotional Dysregulation (Difficulty controlling emotional responses, leading to extreme reactions)')) !!}
     {!! Form::textarea('emotional', null, ['class' => 'form-control', 'placeholder' => ' Details', 'disabled']) !!}
 </div>
 
 
 <div class="form-group">
-    {!! Form::label('social', __('Social')) !!}
+    {!! Form::label('social', __('5. Social Withdrawal (Avoiding social interactions and isolating oneself from friends and family)')) !!}
     {!! Form::textarea('social', null, ['class' => 'form-control', 'placeholder' => ' Information', 'disabled']) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('fatigue', __('Fatigue')) !!}
+    {!! Form::label('fatigue', __('6. Fatigue (Persistent tiredness that is not relieved by rest or sleep)')) !!}
     {!! Form::textarea('fatigue', null, ['class' => 'form-control', 'placeholder' => ' Information', 'disabled']) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('concentrating', __('Concentrating')) !!}
+    {!! Form::label('concentrating', __('7. Difficulty Concentrating (Trouble focusing on tasks or maintaining attention)')) !!}
     {!! Form::textarea('concentrating', null, ['class' => 'form-control', 'placeholder' => ' Information', 'disabled']) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('sleep', __('Sleep')) !!}
+    {!! Form::label('sleep', __('8. Sleep Disturbances (Experiencing insomnia or excessive sleep)')) !!}
     {!! Form::textarea('sleep', null, ['class' => 'form-control', 'placeholder' => ' Information', 'disabled']) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('esteem', __('Esteem')) !!}
+    {!! Form::label('esteem', __('9. Low Self-Esteem (Persistent negative thoughts about oneself and feelings of inadequacy)')) !!}
     {!! Form::textarea('esteem', null, ['class' => 'form-control', 'placeholder' => ' Information', 'disabled']) !!}
 </div>
 
 <div class="form-group">
-    {!! Form::label('panic', __('Panic')) !!}
+    {!! Form::label('panic', __('10. Panic Attacks (Sudden episodes of intense fear, accompanied by physical symptoms like rapid heartbeat)')) !!}
     {!! Form::textarea('panic', null, ['class' => 'form-control', 'placeholder' => ' Information', 'disabled']) !!}
 </div>
 
