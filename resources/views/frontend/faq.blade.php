@@ -30,66 +30,91 @@
                         <!-- card -->
                         <div class="card">
                             <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-1" aria-expanded="false">
-                                Where can I go to find therapy?
+                                What is mental illness?
                             </h6>
                             <div id="faq-item-2-1" class="collapse" data-bs-parent="#accordion_2">
                                 <div class="card-body">
-                                    <p>Different kinds of therapy are more effective based on the nature of the mental health condition and symptoms. For example, children will benefit from a therapist who specializes in children’s mental health. Explore various therapy options to find what suits you best. </p>
+                                    <p>Mental illness refers to a wide range of mental health conditions that affect a person’s thinking, behavior, mood, or emotions. Examples include depression, anxiety, stress disorders, and more. Mental illness is common and treatable with the right support and care.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- card -->
                         <div class="card">
                             <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-2" aria-expanded="false">
-                                What are the different types of mental health professionals?
+                                What does this system do?
                             </h6>
                             <div id="faq-item-2-2" class="collapse" data-bs-parent="#accordion_2">
                                 <div class="card-body">
-                                    <p>There are many types of mental health professionals, each with specific expertise. Finding the right one for you may require some research. Consider psychologists, psychiatrists, counselors, social workers, and more.</p>
+                                    <p>Our system, MindQuilo, is a mental health counseling platform designed to provide users with a supportive environment to assess their mental well-being, receive personalized feedback, and access helpful suggestions from professionals. It also connects users with licensed mental health professionals for further support if needed.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- card -->
                         <div class="card">
                             <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-3" aria-expanded="false">
-                                Where can I find a support group?
+                                What are some common symptoms of mental health issues?
                             </h6>
                             <div id="faq-item-2-3" class="collapse" data-bs-parent="#accordion_2">
                                 <div class="card-body">
-                                    <p>Peer support is valuable. Many organizations offer support groups for consumers, family members, and friends. Some are peer-led, while others are led by mental health professionals. Connecting with others who share similar experiences can be beneficial.</p>
+                                    <p>Common symptoms include:
+                                        Persistent sadness or low mood,
+                                        Excessive worry or anxiety,
+                                        Difficulty concentrating or making decisions,
+                                        Changes in appetite or sleep patterns,
+                                        Feelings of hopelessness or worthlessness,
+                                        Irritability or withdrawal from loved ones,
+                                        Unexplained physical symptoms like headaches or fatigue,
+                                        If you notice these symptoms in yourself or someone else, it’s essential to seek support.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- card -->
                         <div class="card">
                             <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-4" aria-expanded="false">
-                                How can I access inpatient care?
+                                What should I do if I think I have a mental health issue?
                             </h6>
                             <div id="faq-item-2-4" class="collapse" data-bs-parent="#accordion_2">
                                 <div class="card-body">
-                                    <p>Inpatient care can help stabilize individuals on new medications, adjust to new symptoms, or provide necessary help during a crisis. If you or someone you know is in crisis, seek inpatient care as needed.</p>
+                                    <p>If you suspect you’re experiencing a mental health issue:
+                                        Talk to a trusted friend or family member about how you’re feeling.
+                                        Use our system to get a quick assessment and suggestions tailored to your needs.
+                                        Consult a mental health professional for a proper diagnosis and treatment plan.
+                                        Engage in self-care activities such as exercising, meditating, and journaling.
+                                        Early intervention is key to managing mental health effectively.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- card -->
                         <div class="card">
                             <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-5" aria-expanded="false">
-                                Where can I learn more about clinical trials?
+                                How does this system work?
                             </h6>
                             <div id="faq-item-2-5" class="collapse" data-bs-parent="#accordion_2">
                                 <div class="card-body">
-                                    <p>Clinical trials involve testing new medications or treatment approaches. While they can offer innovative solutions, be aware of associated risks before enrolling in a trial.</p>
+                                    <p>MindQuilo works in three simple steps:
+                                        Assessment: You answer a set of yes/no questions designed to evaluate your mental well-being.
+                                        Feedback: Based on your answers, the system provides insights about your mental state and identifies potential symptoms.
+                                        Suggestions: You’ll receive personalized recommendations and can connect with professionals for further guidance if necessary.
+                                        The entire process is private, secure, and user-friendly.</p>
                                 </div>
                             </div>
                         </div>
                         <!-- card -->
                         <div class="card">
                             <h6 class="collapsed ltn__card-title" data-bs-toggle="collapse" data-bs-target="#faq-item-2-6" aria-expanded="false">
-                                What is a Psychiatric Advance Directive?
+                                What are some general tips for maintaining good mental health?
                             </h6>
                             <div id="faq-item-2-6" class="collapse" data-bs-parent="#accordion_2">
                                 <div class="card-body">
-                                    <p>Similar to a medical advance directive, a psychiatric advance directive is a legal document completed during wellness. It provides instructions regarding treatment or services one wishes to have or not have during a mental health crisis. It can influence your care during challenging times.</p>
+                                    <p>Maintain a healthy lifestyle with regular exercise and a balanced diet.
+                                        Get enough sleep and establish a consistent sleep routine.
+                                        Stay connected with friends and family for emotional support.
+                                        Take breaks from work or studies to recharge.
+                                        Practice mindfulness or meditation to reduce stress.
+                                        Avoid substance abuse and seek help if you feel overwhelmed.
+                                        Prioritize your mental health as part of your overall well-being.
+
+                                        </p>
                                 </div>
                             </div>
                         </div>
@@ -130,7 +155,7 @@
                     <div class="counter-icon">
                         <i class="flaticon-add-user-1"></i>
                     </div>
-                    <h1><span class="counter">35</span><span class="counterUp-icon">+</span> </h1>
+                    <h1><span class="counter">500</span><span class="counterUp-icon">+</span> </h1>
                     <h6>Active Clients</h6>
                 </div>
             </div>
@@ -139,7 +164,7 @@
                     <div class="counter-icon">
                         <i class="flaticon-dining-table-with-chairs"></i>
                     </div>
-                    <h1><span class="counter">100</span><span class="counterUp-icon">+</span> </h1>
+                    <h1><span class="counter">800</span><span class="counterUp-icon">+</span> </h1>
                     <h6>Cup Of Coffee</h6>
                 </div>
             </div>
@@ -148,7 +173,7 @@
                     <div class="counter-icon">
                         <i class="flaticon-package"></i>
                     </div>
-                    <h1><span class="counter">15</span><span class="counterUp-icon">+</span> </h1>
+                    <h1><span class="counter">150</span><span class="counterUp-icon">+</span> </h1>
                     <h6>Get Rewards</h6>
                 </div>
             </div>

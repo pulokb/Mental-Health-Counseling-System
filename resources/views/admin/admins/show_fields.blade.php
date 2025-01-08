@@ -18,6 +18,26 @@
     @endforeach
 </div>
 
+<div class="form-group">
+    <b>{!! Form::label('phone', __('Phone')) !!}</b>
+    <p>{{ $admin->phone }}</p>
+</div>
+
+<div class="form-group">
+    <b>{!! Form::label('address', __('Address')) !!}</b>
+    <p>{{ $admin->address }}</p>
+</div>
+
+<div class="form-group">
+    <b>{!! Form::label('gender', __('Gender')) !!}</b>
+    <p>{{ $admin->gender }}</p>
+</div>
+
+<div class="form-group">
+    <b>{!! Form::label('occupation', __('Occupation')) !!}</b>
+    <p>{{ $admin->occupation }}</p>
+</div>
+
 
 <!-- Created At Field -->
 <div class="form-group">

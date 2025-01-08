@@ -54,7 +54,7 @@
                             <img src="view/img/icons/12.png" alt="Icon Image" style="width: 40px;">
                         </div>
                         <h3>Office Address</h3>
-                        <p><a href="https://www.google.com/maps/place/Katasur,+Mohammadpur,+1207+Dhaka,+Bangladesh" target="_blank" class="text-decoration-none">Katasur, Mohammadpur, 1207<br>Dhaka, Bangladesh</a></p>
+                        <p><a href="https://www.google.com/maps/place/Jahangirnagar University,+Savar,+Dhaka-1342,+Bangladesh." target="_blank" class="text-decoration-none">Jahangirnagar University,Savar,Dhaka.</a></p>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row">
-                            <div class="col-md-4">
+                            {{-- <div class="col-md-4">
                                 <div class="card">
                                     <img src="view/img/team/ceo.png" class="card-img-top" alt="CEO">
                                     <div class="card-body text-center">
@@ -92,17 +92,35 @@
                                         <p><a href="mailto:pulok.contact@gmail.com">pulok.contact@gmail.com</a></p>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
+                            </div> --}}
+                            {{-- <div class="col-md-4">
                                 <div class="card">
                                     <img src="view/img/team/cto.png" class="card-img-top" alt="CTO">
                                     <div class="card-body text-center">
                                         <h5 class="card-title">Pulok Biswas</h5>
-                                        <p class="card-text">CTO</p>
+                                        <p class="card-text">Founder & Administrator</p>
                                         <p><a href="mailto:pulok.contact@gmail.com">pulok.contact@gmail.com</a></p>
+                                        <p><a href="tel:+8801793651750">Contact: +8801793651750</a></p>
+                                    </div>
+                                </div>
+                            </div> --}}
+
+                            <div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+                                <div class="col-md-4">
+                                    <div class="card">
+                                        <div class="card-img-wrapper">
+                                            <img src="view/img/team/cto.png" class="card-img-top hover-zoom" alt="CFO">
+                                        </div>
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Pulok Biswas</h5>
+                                            <p class="card-text">Founder & Administrator</p>
+                                            <p><a href="mailto:pulok.contact@gmail.com">pulok.contact@gmail.com</a></p>
+                                            <p><a href="tel:+8801793651750">Contact: +8801793651750</a></p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                     <!-- Add more carousel-items for more team members -->
@@ -194,5 +212,20 @@
     <br><br><br><br><br><br><br><br><br><br><br><br>
 <!-- FEEDBACK SLIDER AREA END -->
 
+<style>
+    /* Hover Zoom Effect */
+    .card-img-wrapper {
+        overflow: hidden; /* Ensures the image doesn't overflow the card */
+        border-radius: 0.25rem; /* Matches the Bootstrap card's border radius */
+    }
+
+    .hover-zoom {
+        transition: transform 0.3s ease; /* Smooth zoom effect */
+    }
+
+    .hover-zoom:hover {
+        transform: scale(1.1); /* Zoom in slightly on hover */
+    }
+    </style>
 
 @include('layouts.footer')

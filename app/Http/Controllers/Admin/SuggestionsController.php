@@ -45,17 +45,39 @@ class SuggestionsController extends AppBaseController
     }
 
 
-    public function show(Suggestions $suggestions)
-    {
-        $this->authorize('Suggestions-view');
-        return view('admin.suggestions.show',compact('suggestions'))->with('icon', $this->icon);
+    // public function show(Suggestions $suggestions)
+    // {
+    //     $this->authorize('Suggestions-view');
+    //     return view('admin.suggestions.show',compact('suggestions'))->with('icon', $this->icon);
+    // }
+
+
+
+    public function show($id)
+{
+    $this->authorize('Suggestions-view');
+
+    // Manually fetch the record
+    $suggestions = Suggestions::find($id);
+
+    if (!$suggestions) {
+        abort(404, 'Suggestions not found.');
     }
 
+    return view('admin.suggestions.show', compact('suggestions'))->with('icon', $this->icon);
+}
 
-    public function edit(Suggestions $suggestions)
+
+    // public function edit(Suggestions $suggestions)
+    // {
+    //     $this->authorize('Suggestions-update');
+    //     return view('admin.suggestions.edit',compact('suggestions'))->with('icon', $this->icon);
+    // }
+
+    public function edit($id)
     {
-        $this->authorize('Suggestions-update');
-        return view('admin.suggestions.edit',compact('suggestions'))->with('icon', $this->icon);
+        $suggestion = Suggestions::findOrFail($id);
+        return view('admin.suggestions.edit', compact('suggestion'));
     }
 
 
@@ -70,10 +92,17 @@ class SuggestionsController extends AppBaseController
     }
 
 
-    public function destroy(Suggestions $suggestions)
+    // public function destroy(Suggestions $suggestions)
+    // {
+    //     $this->authorize('Suggestions-delete');
+    //     //FileHelper::deleteImage($suggestions);
+    //     $suggestions->delete();
+    // }
+
+    public function destroy($id)
     {
-        $this->authorize('Suggestions-delete');
-        //FileHelper::deleteImage($suggestions);
-        $suggestions->delete();
+        $suggestion = Suggestions::findOrFail($id);
+        $suggestion->delete();
+        return redirect()->route('admin.suggestions.index')->with('success', 'Suggestion deleted successfully.');
     }
 }

@@ -280,7 +280,7 @@
                                             <i class="icon-placeholder"></i>
                                         </div>
                                         <div class="footer-address-info">
-                                            <p>Katasur, Mohammadpur, 1207 Dhaka, Bangladesh</p>
+                                            <p>Jahangirnagar University, Savar, Dhaka-1342, Bangladesh.</p>
                                         </div>
                                     </li>
                                     <li>
@@ -411,7 +411,7 @@
     <script src="{{ asset('view/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('view/js/plugins.js') }}"></script>
     <script src="{{ asset('view/js/main.js') }}"></script>
-    
+
 </body>
 
 </html>

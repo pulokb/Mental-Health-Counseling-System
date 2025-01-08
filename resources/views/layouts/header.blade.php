@@ -27,7 +27,7 @@
                             <ul>
                                 <li><a href="mailto:pulok.contact@gmail.com"><i class="icon-mail"></i>pulok.contact@gmail.com</a></li>
                                 <li><a href="https://www.google.com/maps/place/Katasur,+Mohammadpur+1207,+Dhaka,+Bangladesh" target="_blank">
-                                    <i class="icon-placeholder"></i>Katasur, Mohammadpur, 1207 Dhaka, Bangladesh
+                                    <i class="icon-placeholder"></i>Jahangirnagar University, Savar, Dhaka-1342, Bangladesh.
                                 </a></li>
                             </ul>
                         </div>

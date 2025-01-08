@@ -20,7 +20,7 @@ class SymptomsController extends AppBaseController
     {
         $this->authorize('Symptoms-view');
         $icon = $this->icon;
-        return $symptomsDataTable->render('admin.symptoms.index',compact('icon'));
+        return $symptomsDataTable->render('admin.symptoms.index', compact('icon'));
     }
 
 
@@ -42,35 +42,75 @@ class SymptomsController extends AppBaseController
     }
 
 
-    public function show(Symptoms $symptoms)
-    {
-        $this->authorize('Symptoms-view');
-        return view('admin.symptoms.show',compact('symptoms'))->with('icon', $this->icon);
+    // public function show(Symptoms $symptoms)
+    // {
+    //     $this->authorize('Symptoms-view');
+    //     return view('admin.symptoms.show', compact('symptoms'))->with('icon', $this->icon);
+    // }
+
+    public function show($id)
+{
+    $this->authorize('Symptoms-view');
+
+    // Manually fetch the record
+    $symptoms = Symptoms::find($id);
+
+    if (!$symptoms) {
+        abort(404, 'Symptoms not found.');
     }
 
+    return view('admin.symptoms.show', compact('symptoms'))->with('icon', $this->icon);
+}
 
-    public function edit(Symptoms $symptoms)
+
+
+
+    // public function edit(Symptoms $symptoms)
+    // {
+    //     $this->authorize('Symptoms-update');
+    //     return view('admin.symptoms.edit',compact('symptoms'))->with('icon', $this->icon);
+    // }
+
+
+    public function edit($id)
     {
-        $this->authorize('Symptoms-update');
-        return view('admin.symptoms.edit',compact('symptoms'))->with('icon', $this->icon);
+        $symptom = Symptoms::findOrFail($id);
+        return view('admin.symptoms.edit', compact('symptom'));
     }
 
 
     public function update(Symptoms $symptoms, SymptomsUpdateRequest $request)
-    {
-        $this->authorize('Symptoms-update');
-        // $imageName = FileHelper::uploadImage($request, $symptoms);
-        // $symptoms->fill(array_merge($request->all(), ['image' => $imageName]))->save();
-        $symptoms->fill($request->all())->save();
-        notify()->success(__("Successfully Updated"), __("Success"));
-        return redirect(route('admin.symptoms.index'));
+{
+    $this->authorize('Symptoms-update');
+
+    // Handle image upload if present
+    if ($request->hasFile('image')) {
+        $imageName = FileHelper::uploadImage($request, $symptoms);
+        $symptoms->image = $imageName;
     }
 
+    // Update other fields
+    $symptoms->fill($request->except(['image']))->save();
 
-    public function destroy(Symptoms $symptoms)
+    notify()->success(__("Successfully Updated"), __("Success"));
+    return redirect(route('admin.symptoms.index'));
+}
+
+
+
+    // public function destroy(Symptoms $symptoms)
+    // {
+    //     $this->authorize('Symptoms-delete');
+    //     //FileHelper::deleteImage($symptoms);
+    //     $symptoms->delete();
+    // }
+
+
+    public function destroy($id)
     {
-        $this->authorize('Symptoms-delete');
-        //FileHelper::deleteImage($symptoms);
-        $symptoms->delete();
+        $symptom = Symptoms::findOrFail($id);
+        $symptom->delete();
+        return redirect()->route('admin.symptoms.index')->with('success', 'Symptom deleted successfully.');
     }
+
 }

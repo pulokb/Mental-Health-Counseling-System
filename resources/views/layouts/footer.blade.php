@@ -15,7 +15,7 @@
                                 <li>
                                     <div class="footer-address-icon">
                                         <a href="https://www.google.com/maps/place/Katasur,+Mohammadpur+1207,+Dhaka,+Bangladesh" target="_blank">
-                                            <i class="icon-placeholder"></i>Katasur, Mohammadpur, 1207 Dhaka, Bangladesh
+                                            <i class="icon-placeholder"></i>Jahangirnagar University, Savar, Dhaka-1342, Bangladesh.
                                         </a>
                                     </div>
                                 </li>
@@ -93,18 +93,28 @@
                 <div class="col-xl-3 col-md-6 col-sm-12 col-12">
                     <div class="footer-widget footer-newsletter-widget">
                         <h4 class="footer-title">Newsletter</h4>
-                        <p>Subscribe to our weekly Newsletter and receive updates via email.</p>
+                        <p>Subscribe to our weekly Newsletter and <br> receive Daily Health Tips to Your Inbox.</p>
                         <div class="footer-newsletter">
-                            <form action="#">
-                                <input type="email" name="email" placeholder="Email*">
+                            <form id="newsletterForm" onsubmit="handleNewsletterSubmission(event)">
+                                <input type="email" name="email" id="emailInput" placeholder="Email*" required>
                                 <div class="btn-wrapper">
-                                    <button class="theme-btn-1 btn" type="submit"><i
-                                            class="fas fa-location-arrow"></i></button>
+                                    <button class="theme-btn-1 btn" type="submit">
+                                        <i class="fas fa-location-arrow"></i>
+                                    </button>
                                 </div>
                             </form>
                         </div>
                         <h5 class="mt-30">We Accept</h5>
                         <img src="view/img/icons/payment-4.png" alt="Payment Image">
+                    </div>
+                </div>
+
+                <!-- Success Message Modal -->
+                <div id="successModal" class="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000; justify-content: center; align-items: center;">
+                    <div style="background: white; padding: 20px; border-radius: 5px; text-align: center;">
+                        <h4>Success!</h4>
+                        <p>Thank you for subscribing to our newsletter!</p>
+                        <button onclick="closeSuccessModal()" style="background: #0A9A73; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;">OK</button>
                     </div>
                 </div>
             </div>
@@ -134,5 +144,27 @@
     <script src="{{ asset('view/js/plugins.js') }} "></script>
     <!-- Main JS -->
     <script src="{{ asset('view/js/main.js') }}"></script>
+
+    <script>
+        function handleNewsletterSubmission(event) {
+            event.preventDefault(); // Prevent the form from refreshing the page
+
+            // Show the success modal
+            const successModal = document.getElementById('successModal');
+            successModal.style.display = 'flex';
+
+            // Redirect to the index page after a short delay
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 3000); // Redirect after 3 seconds
+        }
+
+        function closeSuccessModal() {
+            const successModal = document.getElementById('successModal');
+            successModal.style.display = 'none';
+            window.location.href = '/';
+        }
+    </script>
+
 
 </footer>

@@ -6,7 +6,7 @@
     <div class="col-md-12">
         <div class="main-card mb-3 card">
             <div class="card-body">
-                   {!! Form::model($suggestions, ['route' => ['admin.suggestions.update', $suggestions->id], 'method' => 'patch', 'files' => true]) !!}
+                   {!! Form::model($suggestion, ['route' => ['admin.suggestions.update', $suggestion->id], 'method' => 'patch', 'files' => true]) !!}
 
                         @include('admin.suggestions.fields')
 
