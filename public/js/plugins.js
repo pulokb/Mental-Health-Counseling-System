@@ -14,14 +14,14 @@
 11. Instafeed jQuery
 12. Waypoints jQuery
 13. Nice Select
-14. jQuery UI / price range
-15. scrollup jquery
+14. jQuery UI / price range 
+15. scrollup jquery 
 16. One Page Navigation ( jQuery Easing Plugin )
-17. WOW jQuery
+17. WOW jQuery 
 18. Parallax jQuery
 19. Maplace.js
 
-
+ 
 =================================================== */
 
 
@@ -49,16 +49,6 @@
     }
   }
 }());
-
-// (function() {
-//     (document).ready(function() {
-//         new WOW().init();
-//         setTimeout(function() {
-//             $('[data-bs-toggle="tooltip"]').tooltip();
-//         }, 100);
-//     });
-// });
-
 
 // Place any jQuery/helper plugins in here.
 
@@ -166,7 +156,7 @@ return t=a?function(t){return t&&a(r(t))}:function(t){return t&&r(t)}}function e
 * jquery.counterup.js
 * https://github.com/bfintal/Counter-Up
 * v1.0
-*
+* 
 */
 (function($){"use strict";$.fn.counterUp=function(options){var settings=$.extend({time:400,delay:10,offset:100,beginAt:0,formatter:false,context:"window",callback:function(){}},options),s;return this.each(function(){var $this=$(this),counter={time:$(this).data("counterup-time")||settings.time,delay:$(this).data("counterup-delay")||settings.delay,offset:$(this).data("counterup-offset")||settings.offset,beginAt:$(this).data("counterup-beginat")||settings.beginAt,context:$(this).data("counterup-context")||settings.context};var counterUpper=function(){var nums=[];var divisions=counter.time/counter.delay;var num=$(this).attr("data-num")?$(this).attr("data-num"):$this.text();var isComma=/[0-9]+,[0-9]+/.test(num);num=num.replace(/,/g,"");var decimalPlaces=(num.split(".")[1]||[]).length;if(counter.beginAt>num)counter.beginAt=num;var isTime=/[0-9]+:[0-9]+:[0-9]+/.test(num);if(isTime){var times=num.split(":"),m=1;s=0;while(times.length>0){s+=m*parseInt(times.pop(),10);m*=60}}for(var i=divisions;i>=counter.beginAt/num*divisions;i--){var newNum=parseFloat(num/divisions*i).toFixed(decimalPlaces);if(isTime){newNum=parseInt(s/divisions*i);var hours=parseInt(newNum/3600)%24;var minutes=parseInt(newNum/60)%60;var seconds=parseInt(newNum%60,10);newNum=(hours<10?"0"+hours:hours)+":"+(minutes<10?"0"+minutes:minutes)+":"+(seconds<10?"0"+seconds:seconds)}if(isComma){while(/(\d+)(\d{3})/.test(newNum.toString())){newNum=newNum.toString().replace(/(\d+)(\d{3})/,"$1"+","+"$2")}}if(settings.formatter){newNum=settings.formatter.call(this,newNum)}nums.unshift(newNum)}$this.data("counterup-nums",nums);$this.text(counter.beginAt);var f=function(){if(!$this.data("counterup-nums")){settings.callback.call(this);return}$this.html($this.data("counterup-nums").shift());if($this.data("counterup-nums").length){setTimeout($this.data("counterup-func"),counter.delay)}else{$this.data("counterup-nums",null);$this.data("counterup-func",null);settings.callback.call(this)}};$this.data("counterup-func",f);setTimeout($this.data("counterup-func"),counter.delay)};$this.waypoint(function(direction){counterUpper();this.destroy()},{offset:counter.offset+"%",context:counter.context})})}})(jQuery);
 
@@ -177,17 +167,17 @@ return t=a?function(t){return t&&a(r(t))}:function(t){return t&&r(t)}}function e
 /*!
  * The Final Countdown for jQuery v2.2.0 (http://hilios.github.io/jQuery.countdown/)
  * Copyright (c) 2016 Edson Hilios
- *
+ * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
  * the Software without restriction, including without limitation the rights to
  * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
  * the Software, and to permit persons to whom the Software is furnished to do so,
  * subject to the following conditions:
- *
+ * 
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- *
+ * 
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
  * FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
@@ -240,7 +230,7 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
 
 
 /*-------------------------------------------------------------
-  14. jQuery UI / price range
+  14. jQuery UI / price range 
 ---------------------------------------------------------------*/
 /*! jQuery UI - v1.11.4 - 2016-06-07
 * http://jqueryui.com
@@ -251,7 +241,7 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
 
 
 /*-------------------------------------------------------------
-  15. scrollup jquery
+  15. scrollup jquery 
 ---------------------------------------------------------------*/
 /*!
  * scrollup v2.4.1
@@ -277,7 +267,7 @@ jQuery.easing.jswing=jQuery.easing.swing;jQuery.extend(jQuery.easing,{def:"easeO
 
 
 /*-------------------------------------------------------------
-  17. WOW jQuery
+  17. WOW jQuery 
 ---------------------------------------------------------------*/
 /*! WOW - v1.1.3 - 2016-05-06
  * Copyright (c) 2016 Matthieu Aussaguel;*/

@@ -146,7 +146,7 @@
                         </div>
 
                         <!-- Image Upload -->
-                        {{-- <div class="form-group row">
+                        <div class="form-group row">
                             <label for="image" class="col-md-4 col-form-label text-md-right font-weight-bold">{{ __('Profile Image') }}</label>
                             <div class="col-md-8">
                                 <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image" accept="image/*">
@@ -156,7 +156,7 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div> --}}
+                        </div>
                         <br>
                         <!-- Password -->
                         <div class="form-group row">
