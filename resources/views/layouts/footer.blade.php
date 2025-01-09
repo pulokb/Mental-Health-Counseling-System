@@ -14,7 +14,7 @@
                             <ul>
                                 <li>
                                     <div class="footer-address-icon">
-                                        <a href="https://www.google.com/maps/place/Katasur,+Mohammadpur+1207,+Dhaka,+Bangladesh" target="_blank">
+                                        <a href="https://www.google.com/maps/place/Savar,+Dhaka+1342,+Bangladesh" target="_blank">
                                             <i class="icon-placeholder"></i>Jahangirnagar University, Savar, Dhaka-1342, Bangladesh.
                                         </a>
                                     </div>

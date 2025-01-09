@@ -99,6 +99,7 @@
                             </div>
                         </div>
 
+
                         <!-- Age -->
                         <div class="form-group row">
                             <label for="age" class="col-md-4 col-form-label text-md-right font-weight-bold">{{ __('Date of Birth') }}</label>
@@ -111,6 +112,8 @@
                                 @enderror
                             </div>
                         </div>
+
+                        <br>
 
                         <!-- Gender -->
                         <div class="form-group row">
